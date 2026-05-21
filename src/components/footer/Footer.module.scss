@@ -1,0 +1,40 @@
+@use '/src/styles/_variables.scss' as v;
+
+.footer {
+    background-color: v.$color-bg;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 0.03px;
+    border-top-width: thin;
+    border-top-style: ridge;
+    border-top-color:v.$color-card-border;
+
+}
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.footerText {
+    font-family: v.$font-seconday;
+    color: v.$color-text;
+    font-size: 12px;
+}
+
+.logoText {
+    font-family: v.$font-primary;
+    color: v.$color-accent;
+    font-size: 16px;
+}
+
+.iconContainer {
+    display: flex;
+    
+}
+
