@@ -1,26 +1,35 @@
-import React from 'react'
-import starIcon from '../../assets/icons/stars.svg'
+import React from "react";
+import starIcon from "../../assets/icons/stars.svg";
+import tinyStar from "../../assets/icons/tinyStar.svg";
+import styles from "./ReadingForm.module.scss";
 
 function ReadingForm() {
-    const today = new Date();
-    const formattedDay = today.toLocaleDateString("es-Es",)
+  const today = new Date();
+  const formattedDay = today.toLocaleDateString("es-ES", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
 
   return (
-    <section>
-        <img src={starIcon} alt="" />
+    <section aria-labelledby="reading-title" className={styles.formSection}>
+      <form className={styles.form}>
+        <img src={starIcon} alt="Tres estrellas que evocan el cielo nocturno" />
         <h1>Bienvenida</h1>
         <p>Introduce tu nombre para iniciar la lectura</p>
 
-        <div>
-            <label htmlFor="name">Lectura de:</label>
-            <input type="text" id='name' />
-        </div>
+        <label htmlFor="name">Lectura de:</label>
+        <input type="text" id="name" name="name" required minLength={2} />
 
-        <div>
+        <p className={styles.date}>Fecha: {formattedDay}</p>
 
-        </div>
+        <button>Comenzar lectura</button>
+
+        <img src={tinyStar} alt="Pequeña estrella decorativa" />
+        <a href="/">Volver al inicio</a>
+      </form>
     </section>
-  )
+  );
 }
 
-export default ReadingForm
+export default ReadingForm;
