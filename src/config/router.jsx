@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import App from "../App";
 import Home from "../pages/home/Home";
+import ReadingName from "../pages/readingName/ReadingName";
 
 export const router = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "reading-name",
+        element: <ReadingName />,
       },
     ],
   },
