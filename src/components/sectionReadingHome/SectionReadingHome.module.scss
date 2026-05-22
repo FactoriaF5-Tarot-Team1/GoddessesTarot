@@ -1,0 +1,82 @@
+@use '../../styles/variables' as v;
+
+//en la pantalla principal home hay un texto de 56 que es 3.5 rem
+// en figma tenemos h1 40 es decir 2.5 rem y h2 32 es decir 2 rem
+
+.ArticleReading{
+  width: 100%;
+  max-width: 420px; /* Tamaño ideal para dispositivos móviles */
+  padding: 20px 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.TitleSectionReading
+{
+  font-size: 2.5rem;
+  // font-weight: 500;
+  // margin: 0 0 30px 0;
+  // letter-spacing: 0.5px;
+}
+
+
+.cardSectionReading{
+  background-color: v.$color-card-bg; /* Color oscuro exacto de la imagen */
+  width: 100%;
+  max-width: 360px; /* Tamaño ideal para dispositivos móviles */
+  border-radius: 20px;
+  // border-color: v.$color-card-border;
+  /* CAMBIO: Define el grosor, el estilo y la variable de color */
+  border: 1px solid v.$color-card-border; 
+  padding: 45px 45px;
+  margin:15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.iconContainer {
+  width: 70px;
+  height: 70px;
+  //border-radius: 50%;
+  //border: 1px solid rgba(244, 212, 120, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* AQUÍ: Más espacio entre el icono y el título H1 */
+  margin-bottom: 45px; 
+}
+
+// .iconContainer img {
+//   width: 32px;
+//   height: 32px;
+//   fill: #f4d478;
+// }
+
+.cardTitleSectionReading{
+  font-size: 2rem;
+  // font-weight: 500;
+  // margin: 0 0 30px 0;
+  // letter-spacing: 0.5px;
+}
+
+/* Línea divisoria <hr /> */
+.cardSectionReading hr {
+  width: 85%;
+  border: none;
+  height: 1px;
+  background-color: rgba(244, 212, 120, 0.15); /* Línea dorada muy tenue */
+  margin: 0 0 35px 0;
+}
+
+.cardDescriptionSectionReading{
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 300;
+  padding: 0 10px;
+}
