@@ -14,13 +14,18 @@ function ReadingForm() {
   return (
     <section aria-labelledby="reading-title" className={styles.formSection}>
       <form className={styles.form}>
-        <img
-          src={starIcon}
-          alt="Tres estrellas que evocan el cielo nocturno"
-          className={styles.starIcon}
-        />
+        <div className={styles.starWrapper}>
+          <img
+            src={starIcon}
+            alt="Tres estrellas que evocan el cielo nocturno"
+            className={styles.starIcon}
+          />
+        </div>
 
-        <h1 className={styles.title}>Bienvenida</h1>
+        <h1 id="reading-title" className={styles.title}>
+          Bienvenida
+        </h1>
+
         <p>Introduce tu nombre para iniciar la lectura</p>
 
         <div className={styles.group}>
