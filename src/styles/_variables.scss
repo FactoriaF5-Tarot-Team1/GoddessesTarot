@@ -25,3 +25,18 @@ $font-secondary: "Manrope", sans-serif;
 $border-rad-btn: 8px;
 $border-rad-card: 16px;
 $border-rad-tarot: 12px;
+
+// FORM
+$form-bg: rgb(30, 30, 45, 0.40);
+$form-border: rgba(242, 202, 64, 0.15);
+$form-shadow: rgba(242, 202, 80, 0.10);
+$form-inner-shadow: rgba(242, 202, 80, 0.05);
+$form-blur: 24px;
+$form-radius: 12px;
+$form-placeholder: rgb(208, 197, 175, 0.4);
+$form-divider: linear-gradient(
+      to right,
+      transparent,
+      rgba(242, 202, 64, 0.3),
+      transparent
+    );

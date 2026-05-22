@@ -1,0 +1,18 @@
+/* 
+Los mixins sons bloques de código reutilizables que te permiten agrupar conjuntos de propiedades CSS o estilos completos
+*/
+
+@use "variables" as v;
+
+@mixin glass-form {
+  background: v.$form-bg;
+  backdrop-filter: blur(v.$form-blur);
+  -webkit-backdrop-filter: blur(v.$form-blur);
+
+  border: 1px solid v.$form-border;
+  border-radius: v.$form-radius;
+
+  box-shadow:
+    0 0 20px v.$form-shadow,
+    inset 0 0 10px v.$form-inner-shadow;
+}

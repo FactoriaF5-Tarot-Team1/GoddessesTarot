@@ -1,6 +1,6 @@
 import React from "react";
 import starIcon from "../../assets/icons/stars.svg";
-import tinyStar from "../../assets/icons/tinyStar.svg";
+import tinyStar from "../../assets/icons/tiny-star.svg";
 import styles from "./ReadingForm.module.scss";
 
 function ReadingForm() {
@@ -14,18 +14,44 @@ function ReadingForm() {
   return (
     <section aria-labelledby="reading-title" className={styles.formSection}>
       <form className={styles.form}>
-        <img src={starIcon} alt="Tres estrellas que evocan el cielo nocturno" />
-        <h1>Bienvenida</h1>
+        <img
+          src={starIcon}
+          alt="Tres estrellas que evocan el cielo nocturno"
+          className={styles.starIcon}
+        />
+
+        <h1 className={styles.title}>Bienvenida</h1>
         <p>Introduce tu nombre para iniciar la lectura</p>
 
-        <label htmlFor="name">Lectura de:</label>
-        <input type="text" id="name" name="name" required minLength={2} />
+        <div className={styles.group}>
+          <label htmlFor="name" className={styles.label}>
+            Lectura de:
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Tu nombre"
+            required
+            minLength={2}
+            className={styles.input}
+          />
+        </div>
 
-        <p className={styles.date}>Fecha: {formattedDay}</p>
+        <p className={styles.date}>
+          Fecha: <span className={styles.dateValue}>{formattedDay}</span>
+        </p>
 
         <button>Comenzar lectura</button>
 
-        <img src={tinyStar} alt="Pequeña estrella decorativa" />
+        <div className={styles.divider}>
+          <img
+            src={tinyStar}
+            alt="Pequeña estrella decorativa"
+            className={styles.decorative}
+          />
+        </div>
+
         <a href="/">Volver al inicio</a>
       </form>
     </section>
