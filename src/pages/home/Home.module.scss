@@ -1,0 +1,21 @@
+@use '../../styles/variables' as v;
+
+.SectionReading{
+  width: 100%;
+  max-width: 420px; /* Tamaño ideal para dispositivos móviles */
+  padding: 20px 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.TitleSectionReading
+{
+  font-size: 2.5rem;
+  // font-weight: 500;
+  // margin: 0 0 30px 0;
+  // letter-spacing: 0.5px;
+}
+
+.ParagrahSectionReading{
+  color:v.$color-subtitle;
+}
