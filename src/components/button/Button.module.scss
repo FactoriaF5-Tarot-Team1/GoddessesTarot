@@ -1,19 +1,29 @@
-@use '../../styles/variables' as v;
-
+@use "../../styles/variables" as v;
 
 .button {
-    border-radius: v.$border-rad-btn;
-    
+  padding: 1rem 1rem;
+  border-radius: v.$border-rad-btn;
+  border: 0.5px solid v.$color-text;
+  color: v.$color-text;
+  transition: filter 0.2s ease;
+
+  &:active {
+    transform: scale(0.98);
+    filter: brightness(1.3);
+  }
 }
 
 .primary {
-
+  background: v.$color-main-btn;
+  font-weight: bold;
 }
 
 .secondary {
-    
+  background: none;
+  color: v.$color-accent;
 }
 
 .delete {
-    
+  border: 0.5px solid v.$color-delete;
+  color: v.$color-delete;
 }
