@@ -15,7 +15,7 @@ function Home() {
         <p className={styles.ParagrahSectionReading}>TU PASADO, PRESENTE Y FUTURO</p>
 
         {listSections.map((section,index) =>(
-          <SectionReadingHome icon={section.icon} alt={section.alt} title={section.title} description={section.description} />
+          <SectionReadingHome icon={section.icon} alt={section.alt} title={section.title} description={section.description} isActive={section.isActive} />
         ))
         }
       </section>

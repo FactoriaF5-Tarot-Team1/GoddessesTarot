@@ -25,6 +25,16 @@
   }
 }
 
+// este estilo es para poner un card activo por defecto en el componente
+.active {
+  background-color: v.$color-card-bg2;
+  border: 1px solid v.$color-card-border-selected;
+
+  .iconContainer img {
+    border-color: v.$color-card-border-selected;
+  }
+}
+
 .iconContainer {
   width: 70px;
   height: 70px;
@@ -40,10 +50,6 @@
   border-radius: 50%;
   border: 3px solid v.$color-card-border;
  }
-
-// .cardTitleSectionReading{
-//   font-size: 2rem;
-// }
 
 /* Línea divisoria <hr /> */
 .cardSectionReading hr {

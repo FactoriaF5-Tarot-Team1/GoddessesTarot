@@ -1,10 +1,10 @@
 import styles from './SectionReadingHome.module.scss'
 import React from 'react'
 
-function SectionReadingHome({icon,alt,title,description}) {
+function SectionReadingHome({icon,alt,title,description,isActive}) {
   return (
     <>
-    <section className={styles.cardSectionReading}>
+    <section className={styles.cardSectionReading + (isActive ? ' ' + styles.active : '')}>
         {/* poner icon del componente de lectura */}
         <div className={styles.iconContainer}>
             <img src={icon} alt={alt}></img>
