@@ -1,11 +1,11 @@
 @use "../../styles/variables" as v;
 
 .cardFan {
-  width: 141px;
-  height: 196px;
+  touch-action: none;
+  width: 111px;
+  height: 146px;
   position: absolute;
   cursor: pointer;
-  bottom: 0;
   transform: rotate(var(--rotation));
   transform-origin: bottom center;
   transition: transform 0.2s ease-out;
@@ -18,7 +18,16 @@
   }
 
   &:hover {
-    transform: rotate(var(--rotation)) translateY(-20px);
+    transform: rotate(var(--rotation)) translateY(-10px);
+  }
+
+  @media (min-width: 768px) {
+    width: 141px;
+    height: 196px;
+
+    &:hover {
+      transform: rotate(var(--rotation)) translateY(-20px);
+    }
   }
 }
 
@@ -36,5 +45,9 @@
 }
 
 .touched {
-  transform: rotate(var(--rotation)) translateY(-20px);
+  transform: rotate(var(--rotation)) translateY(-10px);
+
+  @media (min-width: 768px) {
+    transform: rotate(var(--rotation)) translateY(-20px);
+  }
 }
