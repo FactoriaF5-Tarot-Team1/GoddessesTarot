@@ -11,7 +11,9 @@ function Fan({ shuffledIds, selectCard, selectedCards }) {
           selectCard={selectCard}
           isDisabled={selectedCards.length >= 3}
           style={{
-            transform: `rotate(${getRotation(index)}deg)`,
+            "--rotation": `${getRotation(index)}deg`,
+            "--offset": `${getOffset(index)}px`,
+            left: `calc(50% + var(--offset))`,
           }}
         />
       ))}
@@ -21,8 +23,14 @@ function Fan({ shuffledIds, selectCard, selectedCards }) {
 
 function getRotation(index) {
   const total = 22;
-  const spread = 120;
+  const spread = 90;
   return -spread / 2 + (spread / (total - 1)) * index;
+}
+
+function getOffset(index) {
+  const total = 22;
+  const spacing = 10;
+  return (index - (total - 1) / 2) * spacing;
 }
 
 export default Fan;

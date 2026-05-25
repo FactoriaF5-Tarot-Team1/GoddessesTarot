@@ -5,6 +5,7 @@ import styles from "./CardFan.module.scss";
 
 function CardFan({ id, selectCard, isDisabled, style }) {
   const [isSelected, setIsSelected] = useState(false);
+  const [isTouched, setIsTouched] = useState(false);
 
   async function handleClick() {
     if (isSelected || isDisabled) return;
@@ -22,8 +23,10 @@ function CardFan({ id, selectCard, isDisabled, style }) {
   return (
     <div
       style={style}
-      className={`${styles.cardFan} ${isSelected ? styles.selected : ""} ${isDisabled ? styles.disabled : ""}`}
+      className={`${styles.cardFan} ${isSelected ? styles.selected : ""} ${isDisabled ? styles.disabled : ""} ${isTouched ? styles.touched : ""}`}
       onClick={handleClick}
+      onTouchStart={() => setIsTouched(true)}
+      onTouchEnd={() => setIsTouched(false)}
     >
       <img src={cardBack} alt="carta del tarot boca abajo" />
     </div>

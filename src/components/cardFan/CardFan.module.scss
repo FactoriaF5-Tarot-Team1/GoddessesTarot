@@ -3,18 +3,22 @@
 .cardFan {
   width: 141px;
   height: 196px;
+  position: absolute;
   cursor: pointer;
+  bottom: 0;
+  transform: rotate(var(--rotation));
+  transform-origin: bottom center;
   transition: transform 0.2s ease-out;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: v.$border-rad-btn;
+    border-radius: v.$border-rad-card;
   }
 
   &:hover {
-    transform: translateY(-10px);
+    transform: rotate(var(--rotation)) translateY(-20px);
   }
 }
 
@@ -29,4 +33,8 @@
   &:hover {
     transform: none;
   }
+}
+
+.touched {
+  transform: rotate(var(--rotation)) translateY(-20px);
 }
