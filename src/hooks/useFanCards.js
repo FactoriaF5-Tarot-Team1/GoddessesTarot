@@ -27,7 +27,6 @@ function useFanCards() {
     selectedCards,
     currentTurn,
     selectCard,
-    isFinished,
     modalCard,
     openModal,
     closeModal,
