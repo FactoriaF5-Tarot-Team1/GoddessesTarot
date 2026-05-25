@@ -1,10 +1,15 @@
 import styles from './SectionReadingHome.module.scss'
 import React from 'react'
 
-function SectionReadingHome({icon,alt,title,description,isActive}) {
+function SectionReadingHome({icon,alt,title,description,isActive,onHover}) {
   return (
     <>
-    <section className={styles.cardSectionReading + (isActive ? ' ' + styles.active : '')}>
+    <section 
+    // Al entrar el ratón, avisamos al padre para que actualice el activeId
+      onMouseEnter={onHover}
+      className={`${styles.cardSectionReading} ${isActive ? styles.active : ''}`}
+    >
+
         {/* poner icon del componente de lectura */}
         <div className={styles.iconContainer}>
             <img src={icon} alt={alt}></img>
