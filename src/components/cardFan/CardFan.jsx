@@ -3,7 +3,7 @@ import { apiTarot } from "../../services/apiTarot";
 import cardBack from "../../assets/images/card-back.png";
 import styles from "./CardFan.module.scss";
 
-function CardFan({ id, selectCard, isDisabled }) {
+function CardFan({ id, selectCard, isDisabled, style }) {
   const [isSelected, setIsSelected] = useState(false);
 
   async function handleClick() {
@@ -21,6 +21,7 @@ function CardFan({ id, selectCard, isDisabled }) {
 
   return (
     <div
+      style={style}
       className={`${styles.cardFan} ${isSelected ? styles.selected : ""} ${isDisabled ? styles.disabled : ""}`}
       onClick={handleClick}
     >
