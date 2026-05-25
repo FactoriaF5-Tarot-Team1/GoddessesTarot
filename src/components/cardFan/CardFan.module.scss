@@ -1,0 +1,32 @@
+@use "../../styles/variables" as v;
+
+.cardFan {
+  width: 141px;
+  height: 196px;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: v.$border-rad-btn;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+}
+
+.selected {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.disabled {
+  cursor: not-allowed;
+
+  &:hover {
+    transform: none;
+  }
+}
