@@ -7,25 +7,26 @@
   border-radius: v.$border-rad-card;
   /* CAMBIO: Define el grosor, el estilo y la variable de color */
   border: 1px solid v.$color-card-border; 
-  padding: 45px 45px;
+  padding: 45px;
   margin:15px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-   &:hover {
-    background-color: v.$color-card-bg2; 
-    border: 1px solid v.$color-card-border-selected; 
+  transition: all 0.3s ease;
 
-    .iconContainer img {
-      border-color: v.$color-card-border-selected;
-    }
-  }
+    &:hover {
+     background-color: v.$color-card-bg2; 
+     border: 1px solid v.$color-card-border-selected; 
+
+     .iconContainer img {
+       border-color: v.$color-card-border-selected;
+     }
+   }
 }
 
-// este estilo es para poner un card activo por defecto en el componente
+// este estilo es para poner un card activo por defecto y cuando se hace hover en otro card, el card activo se desactiva y se activa el card que se ha hecho hover
 .active {
   background-color: v.$color-card-bg2;
   border: 1px solid v.$color-card-border-selected;

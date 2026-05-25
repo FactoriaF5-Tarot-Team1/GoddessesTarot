@@ -8,9 +8,11 @@
   padding: 1rem;
   align-items: center;
   text-align: center;
+  //revisar este margin 
+   margin: 0 auto;
 }
 
-.prueba{
+.cardsContainer{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,6 +20,35 @@
 
 .ParagrahSectionReading{
   color:v.$color-subtitle;
+}
+
+/* =========================
+   DESKTOP
+========================= */
+@media screen and (min-width: 1024px){
+
+  .SectionReading{
+    max-width: 1400px;
+    padding: 4rem 2rem;
+  }
+
+  // .TitleSectionReading{
+  //   font-size: 4rem;
+  //   margin-bottom: 0.5rem;
+  // }
+
+  .ParagrahSectionReading{
+    margin-bottom: 4rem;
+    letter-spacing: 3px;
+  }
+
+  .cardsContainer{
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+  }
+
 }
 
 

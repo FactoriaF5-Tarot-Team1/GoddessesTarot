@@ -17,7 +17,7 @@ function Home() {
       <section className={styles.SectionReading}>
         <h2 className={styles.TitleSectionReading}>Tirada de 3 Cartas</h2>
         <p className={styles.ParagrahSectionReading}>TU PASADO, PRESENTE Y FUTURO</p>
-        <div onMouseLeave={() => setActiveId(2)}>
+        <div className={styles.cardsContainer} onMouseLeave={() => setActiveId(2)}>
         {listSections.map((section,index) =>(
           <SectionReadingHome 
             key={section.id} 
