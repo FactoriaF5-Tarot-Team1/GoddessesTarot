@@ -1,0 +1,44 @@
+@use "../../styles/variables" as v;
+
+.cardSlot {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: v.$border-rad-card;
+  background: v.$color-card-bg;
+  border: 1px solid v.$color-accent;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.cardContainer {
+  width: 150px;
+  height: 260px;
+  border-radius: v.$border-rad-btn;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: v.$border-rad-card;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 25px 8px rgba(v.$color-accent, 0.4);
+    }
+  }
+}
+
+.empty {
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.filled {
+  border: none;
+}
