@@ -1,21 +1,11 @@
-import React from "react"
-import Fan from "../../components/fan/Fan"
-import TurnIndicator from "../../components/turn-indicator/TurnIndicator"
-import useFanCards from "../../hooks/useFanCards"
+import React from "react";
 
 function Home() {
-    const { shuffledIds, selectCard, selectedCards, currentTurn } = useFanCards()
-
-    return (
-        <>
-            <Fan
-                shuffledIds={shuffledIds}
-                selectCard={selectCard}
-                selectedCards={selectedCards}
-            />
-            <TurnIndicator currentTurn={currentTurn} />
-        </>
-    )
+  return (
+    <>
+    
+    </>
+  );
 }
 
-export default Home
+export default Home;
