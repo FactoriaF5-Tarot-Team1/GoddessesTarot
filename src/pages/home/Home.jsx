@@ -1,6 +1,6 @@
 import React from "react"
 import Fan from "../../components/fan/Fan"
-//import TurnIndicator from "../../components/turnIndicator/TurnIndicator"
+import TurnIndicator from "../../components/turn-indicator/TurnIndicator"
 import useFanCards from "../../hooks/useFanCards"
 
 function Home() {
@@ -13,6 +13,7 @@ function Home() {
                 selectCard={selectCard}
                 selectedCards={selectedCards}
             />
+            <TurnIndicator currentTurn={currentTurn} />
         </>
     )
 }
