@@ -1,0 +1,67 @@
+@use "/src/styles/_variables.scss" as v;
+
+.footer {
+  background-color: v.$color-bg;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.03px;
+  border-top: thin ridge v.$color-card-border;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.footerText {
+  font-family: v.$font-secondary;
+  color: v.$color-text;
+  font-size: 12px;
+}
+
+.logoText {
+  font-family: v.$font-primary;
+  color: v.$color-accent;
+}
+
+.iconContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+// DESKTOP
+
+@media (min-width: 1024px) {
+  .footer {
+    justify-content: space-between;
+    padding: 20px 80px;
+  }
+}
+
+// TABLET
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 20px 80px;
+  }
+  .footerContainer {
+    align-items: flex-start;
+    margin-top: 0;
+  }
+
+  .iconContainer {
+    margin-top: 0;
+  }
+}
