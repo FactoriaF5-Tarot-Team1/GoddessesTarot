@@ -1,0 +1,60 @@
+@use "../../styles/variables" as v;
+
+.tarotDeckContent {
+  background-color: v.$color-bg;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.stemTarotDivider {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: v.$color-accent;
+  gap: 0.5rem;
+  padding: 2rem 0rem 0.2rem 0rem;
+}
+
+.tarotDeckDescription {
+  width: 100%;
+  max-width: 420px;
+  padding: 1rem;
+  align-items: center;
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+  }
+}
+
+.adaLovelaceContainer {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 400px; // Keeps it true to the mockup scale
+  margin: 0 auto;
+}
+
+.adaLovelaceImage {
+  width: 100%;
+  border-radius: 18px;
+  display: block;
+  padding: 10px;
+  height: auto;
+}
+
+.cardOverlayText {
+  position: absolute;
+  color: v.$color-subtitle;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  padding: 0.8rem;
+  text-align: center;
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid v.$color-card-border;
+}
