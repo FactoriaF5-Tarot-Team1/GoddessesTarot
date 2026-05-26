@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
+import Hero from "../../components/hero/Hero";
 import SectionReadingHome from '../../components/section-reading-home/SectionReadingHome'
-
 import styles from './Home.module.scss'
-
 import { arraySectionReadingHome } from '../../assets/data/dataGoodessTarot'; 
+
 
 function Home() {
   
@@ -13,6 +13,8 @@ function Home() {
 
   return (
     <>
+      <Hero></Hero>
+
       <section className={styles.sectionReading}>
         <h2>Tirada de 3 Cartas</h2>
         <p className={styles.paragrahSectionReading}>TU PASADO, PRESENTE Y FUTURO</p>
@@ -32,8 +34,9 @@ function Home() {
         }
         </div>
       </section>
+    
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;
