@@ -40,7 +40,7 @@
   cursor: not-allowed;
 
   &:hover {
-    transform: none;
+    transform: rotate(var(--rotation));
   }
 }
 

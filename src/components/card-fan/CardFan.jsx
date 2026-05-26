@@ -24,15 +24,15 @@ function CardFan({ id, selectCard, isDisabled, style }) {
     <div
       style={style}
       className={`${styles.cardFan} ${isSelected ? styles.selected : ""} ${isDisabled ? styles.disabled : ""} ${isTouched ? styles.touched : ""}`}
-      onClick={handleClick}
       onTouchStart={(e) => {
         e.preventDefault();
+        if (isDisabled) return;
         setIsTouched(true);
       }}
       onTouchEnd={(e) => {
         e.preventDefault();
         setIsTouched(false);
-        handleClick();
+        if (!isDisabled) handleClick();
       }}
       onClick={(e) => {
         if (e.pointerType === "touch") return; // ignora clicks que vienen de touch

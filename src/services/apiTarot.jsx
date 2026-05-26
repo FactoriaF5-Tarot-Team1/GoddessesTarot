@@ -5,7 +5,7 @@ axios.defaults.baseURL =
 
 export const apiTarot = () => {
   const getCardById = async (id) => {
-    const response = await axios.get(id);
+    const response = await axios.get(String(id));
     return response.data;
   };
 

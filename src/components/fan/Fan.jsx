@@ -1,4 +1,4 @@
-import CardFan from "../cardFan/CardFan";
+import CardFan from "../card-fan/CardFan";
 import styles from "./Fan.module.scss";
 
 function Fan({ shuffledIds, selectCard, selectedCards }) {
