@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Reading.module.scss";
 import Fan from "../../components/fan/Fan";
 import TurnIndicator from "../../components/turn-indicator/TurnIndicator";
 import CardSlot from "../../components/card-slot/CardSlot";
@@ -10,13 +11,15 @@ function Reading() {
 
   return (
     <>
-      <Fan
-        shuffledIds={shuffledIds}
-        selectCard={selectCard}
-        selectedCards={selectedCards}
-      ></Fan>
-      <TurnIndicator currentTurn={currentTurn} />
-      <div>
+      <div className={styles.readingFan}>
+        <Fan
+          shuffledIds={shuffledIds}
+          selectCard={selectCard}
+          selectedCards={selectedCards}
+        ></Fan>
+        <TurnIndicator currentTurn={currentTurn} />
+      </div>
+      <div className={styles.slotsContainer}>
         <CardSlot turn="pasado" card={selectedCards[0]} openModal={openModal} />
         <CardSlot
           turn="presente"
