@@ -4,30 +4,37 @@ import styles from "./ReadingForm.module.scss";
 import Button from "../button/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useReading } from "../../context/ReadingContext";
 
 function ReadingForm() {
+  const navigate = useNavigate();
+  const { setReadingData } = useReading();
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+  const now = new Date();
 
-  const today = new Date();
-  const formattedDay = today.toLocaleDateString("es-ES", {
+  const date = now.toLocaleDateString("es-ES", {
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
   });
 
-  const navigate = useNavigate();
+  const onSubmit = (data) => {
+    const name = data.name;
 
-  function handleClick() {
-    navigate("/reading-name");
-  }
+    const time = now.toLocaleTimeString("es-ES", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
+    setReadingData({ name, date, time });
+
+    navigate("/reading");
+  };
 
   return (
     <section aria-labelledby="reading-title" className={styles.formSection}>
@@ -64,14 +71,18 @@ function ReadingForm() {
               },
             })}
           />
-          {errors.name && <p>{errors.name.message}</p>}
+          {errors.name && (
+            <p className={styles.errorMessage}>{errors.name.message}</p>
+          )}
         </div>
 
         <p className={styles.date}>
-          Fecha: <span className={styles.dateValue}>{formattedDay}</span>
+          Fecha: <span className={styles.dateValue}>{date}</span>
         </p>
 
-        <Button variant={"primary"} handleClick={handleClick}>EMPEZAR LECTURA</Button>
+        <Button variant={"primary"} type="submit">
+          EMPEZAR LECTURA
+        </Button>
 
         <div className={styles.divider}>
           <img

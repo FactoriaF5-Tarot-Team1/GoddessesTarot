@@ -121,6 +121,12 @@
   color: v.$color-text;
 }
 
+.errorMessage {
+  color: v.$color-delete;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
 //  DIVIDER
 
 .divider {
