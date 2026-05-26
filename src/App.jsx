@@ -1,4 +1,5 @@
 import { Outlet } from "react-router";
+import Footer from './components/footer/Footer';
 
 export default function App() {
   return (
@@ -9,7 +10,7 @@ export default function App() {
         <Outlet />
       </main>
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
