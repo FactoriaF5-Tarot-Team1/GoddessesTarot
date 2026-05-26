@@ -1,0 +1,48 @@
+@use '../../styles/variables' as v;
+
+
+.sectionReading{
+  width: 100%;
+  max-width: 420px; 
+  padding: 1rem;
+  align-items: center;
+  text-align: center;
+   margin: 0 auto;
+}
+
+.cardsContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.paragrahSectionReading{
+  color:v.$color-subtitle;
+}
+
+/* =========================
+   DESKTOP
+========================= */
+@media screen and (min-width: 1024px){
+
+  .sectionReading{
+    max-width: 1400px;
+    padding: 4rem 2rem;
+  }
+
+  .paragrahSectionReading{
+    margin-bottom: 4rem;
+    letter-spacing: 3px;
+  }
+
+  .cardsContainer{
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+  }
+
+}
+
+
+
