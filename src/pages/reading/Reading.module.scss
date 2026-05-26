@@ -1,13 +1,24 @@
 @use "../../styles/variables" as v;
 
-.textLines {
-  //z-index: 20;
+.readingHero {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding-top: 7rem;
+  padding-bottom: 3rem;
+
+  gap: 1.75rem;
+
+  //min-height: 60vh;
+}
+
+.textLines {
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0rem 1.5rem 0rem;
 
   p {
     letter-spacing: 2.8px;
@@ -16,26 +27,42 @@
 }
 
 .heroContent {
-  //position: absolute;
-  bottom: 2.4rem;
-  padding: 0 2rem;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  //justify-content: flex-end;
   align-items: center;
-  gap: 0.7rem;
+  gap: 1rem;
+
+  max-width: 32rem;
 
   h1 {
     font-weight: 500;
     font-style: italic;
     letter-spacing: -1.12px;
-    width: 90%;
+    margin: 0;
+    max-width: 18rem;
   }
 
   p {
+    max-width: 22rem;
+
     font-size: 1.1rem;
     font-weight: 100;
-    padding-bottom: 1rem;
+  }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+@media screen and (min-width: 1024px) {
+  .heroContent {
+    max-width: 40rem;
+
+    h1 {
+      max-width: 40rem;
+    }
+
+    p {
+      max-width: 40rem;
+    }
   }
 }

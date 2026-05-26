@@ -5,7 +5,7 @@ import line from "../../assets/icons/line.svg";
 function Reading() {
   return (
     <>
-      <div>
+      <section className={styles.readingHero}>
         <div className={styles.textLines}>
           <img src={line} alt="linea" />
           <p>CONEXIÓN CUANTICA</p>
@@ -18,7 +18,7 @@ function Reading() {
             intuición guien esta tirada.
           </p>
         </div>
-      </div>
+      </section>
     </>
   );
 }
