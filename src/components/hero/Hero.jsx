@@ -4,7 +4,7 @@ import heroBg from "../../assets/images/hero-bg.png";
 import line from "../../assets/icons/line.svg";
 import Button from "../button/Button";
 import btnStar from "../../assets/icons/btn-stars.svg";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
   const navigate = useNavigate();
