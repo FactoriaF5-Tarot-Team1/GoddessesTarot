@@ -1,22 +1,21 @@
 import React, { useState } from 'react'
-import SectionReadingHome from '../../components/sectionReadingHome/SectionReadingHome'
+import SectionReadingHome from '../../components/section-reading-home/SectionReadingHome'
 
 import styles from './Home.module.scss'
 
 import { arraySectionReadingHome } from '../../assets/data/dataGoodessTarot'; 
 
 function Home() {
-  // Guardamos el array en el estado de React
+  
   const [listSections, setListSections] = useState(arraySectionReadingHome);
 
-  // El ID 2 es el contenedor activo por defecto
   const [activeId, setActiveId] = useState(2);
 
   return (
     <>
-      <section className={styles.SectionReading}>
-        <h2 className={styles.TitleSectionReading}>Tirada de 3 Cartas</h2>
-        <p className={styles.ParagrahSectionReading}>TU PASADO, PRESENTE Y FUTURO</p>
+      <section className={styles.sectionReading}>
+        <h2>Tirada de 3 Cartas</h2>
+        <p className={styles.paragrahSectionReading}>TU PASADO, PRESENTE Y FUTURO</p>
         <div className={styles.cardsContainer} onMouseLeave={() => setActiveId(2)}>
         {listSections.map((section,index) =>(
           <SectionReadingHome 

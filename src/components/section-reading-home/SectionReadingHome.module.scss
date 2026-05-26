@@ -1,11 +1,11 @@
 @use '../../styles/variables' as v;
 
 .cardSectionReading{
-  background-color: v.$color-card-bg; /* Color oscuro exacto de la imagen */
+  background-color: v.$color-card-bg;
   width: 100%;
-  max-width: 360px; /* Tamaño ideal para dispositivos móviles */
+  max-width: 360px;
   border-radius: v.$border-rad-card;
-  /* CAMBIO: Define el grosor, el estilo y la variable de color */
+  /* Define el grosor, el estilo y la variable de color */
   border: 1px solid v.$color-card-border; 
   padding: 45px;
   margin:15px;
@@ -43,7 +43,7 @@
   justify-content: center;
   align-items: center;
   
-  /* AQUÍ: Más espacio entre el icono y el título H1 */
+  /* espacio entre el icono y el título H1 */
   margin-bottom: 45px; 
 }
 
@@ -52,7 +52,7 @@
   border: 3px solid v.$color-card-border;
  }
 
-/* Línea divisoria <hr /> */
+
 .cardSectionReading hr {
   width: 85%;
   border: none;

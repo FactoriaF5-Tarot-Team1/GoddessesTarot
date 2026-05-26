@@ -1,14 +1,12 @@
 @use '../../styles/variables' as v;
 
 
-.SectionReading{
+.sectionReading{
   width: 100%;
-  max-width: 420px; /* Tamaño ideal para dispositivos móviles */
-  // padding: 20px 20px;
+  max-width: 420px; 
   padding: 1rem;
   align-items: center;
   text-align: center;
-  //revisar este margin 
    margin: 0 auto;
 }
 
@@ -18,7 +16,7 @@
   align-items: center;
 }
 
-.ParagrahSectionReading{
+.paragrahSectionReading{
   color:v.$color-subtitle;
 }
 
@@ -27,17 +25,12 @@
 ========================= */
 @media screen and (min-width: 1024px){
 
-  .SectionReading{
+  .sectionReading{
     max-width: 1400px;
     padding: 4rem 2rem;
   }
 
-  // .TitleSectionReading{
-  //   font-size: 4rem;
-  //   margin-bottom: 0.5rem;
-  // }
-
-  .ParagrahSectionReading{
+  .paragrahSectionReading{
     margin-bottom: 4rem;
     letter-spacing: 3px;
   }
