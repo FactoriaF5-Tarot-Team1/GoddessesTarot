@@ -18,7 +18,11 @@ export default function Header() {
         {/* IZQUIERDA */}
         <div className="header__left">
           {/* HAMBURGUESA */}
-          <button className="header__menu" onClick={() => setMenuOpen(true)}>
+          <button
+            className="header__menu"
+            onClick={() => setMenuOpen(true)}
+            aria-label="Abrir menú"
+          >
             <HiOutlineMenuAlt3 />
           </button>
 
@@ -28,16 +32,11 @@ export default function Header() {
 
         {/* NAV DESKTOP */}
         <nav className="header__nav">
-          <a href="/" onClick={() => setMenuOpen(false)}>
-            <img src={starsIcon} alt="stars icon" className="menu__icon" />
+          <a href="/">
             <span>Inicio</span>
-            <img src={bookIcon} alt="book icon" className="menu__icon" />
           </a>
 
-          <a href="/">
-            <img src={starsIcon} alt="stars icon" className="header__icon" />
-            Lecturas anteriores
-          </a>
+          <a href="/">Lecturas anteriores</a>
         </nav>
       </header>
 
@@ -46,7 +45,11 @@ export default function Header() {
       ========================= */}
       <div className={`menu ${menuOpen ? "active" : ""}`}>
         {/* BOTÓN CERRAR */}
-        <button className="menu__close" onClick={() => setMenuOpen(false)}>
+        <button
+          className="menu__close"
+          onClick={() => setMenuOpen(false)}
+          aria-label="Cerrar menú"
+        >
           <HiX />
         </button>
 
@@ -57,15 +60,22 @@ export default function Header() {
 
         {/* LINKS MOBILE */}
         <nav className="menu__nav">
-          {/* Inicio con icono debajo */}
-          <a href="/" className="menu__link--active">
-            Inicio
+          {/* Inicio */}
+          <a
+            href="/"
+            className="menu__link--active"
+            onClick={() => setMenuOpen(false)}
+          >
+            <img src={starsIcon} alt="stars icon" className="menu__icon" />
+
+            <span>Inicio</span>
+
             <img src={bookIcon} alt="book icon" className="menu__icon" />
           </a>
 
-          <a href="/">
+          {/* Lecturas */}
+          <a href="/" onClick={() => setMenuOpen(false)}>
             Lecturas anteriores
-            <img src={starsIcon} alt="stars icon" className="menu__icon" />
           </a>
         </nav>
 
