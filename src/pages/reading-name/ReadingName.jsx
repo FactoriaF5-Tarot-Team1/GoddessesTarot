@@ -1,5 +1,5 @@
 import React from "react";
-import ReadingForm from "../../components/readingForm/ReadingForm";
+import ReadingForm from "../../components/reading-form/ReadingForm";
 
 function ReadingName() {
   return (

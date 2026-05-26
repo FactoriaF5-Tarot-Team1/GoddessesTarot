@@ -1,8 +1,8 @@
-import React from "react";
 import starIcon from "../../assets/icons/stars.svg";
 import tinyStar from "../../assets/icons/tiny-star.svg";
 import styles from "./ReadingForm.module.scss";
-import { Link } from "react-router-dom";
+import Button from "../button/Button";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 function ReadingForm() {
@@ -22,6 +22,12 @@ function ReadingForm() {
     month: "2-digit",
     year: "numeric",
   });
+
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate("/reading-name");
+  }
 
   return (
     <section aria-labelledby="reading-title" className={styles.formSection}>
@@ -65,7 +71,7 @@ function ReadingForm() {
           Fecha: <span className={styles.dateValue}>{formattedDay}</span>
         </p>
 
-        <button type="submit">Comenzar lectura</button>
+        <Button variant={"primary"} handleClick={handleClick}>EMPEZAR LECTURA</Button>
 
         <div className={styles.divider}>
           <img

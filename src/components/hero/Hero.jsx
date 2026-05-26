@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Hero.module.scss";
 import heroBg from "../../assets/images/hero-bg.png";
 import line from "../../assets/icons/line.svg";
