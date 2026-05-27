@@ -58,3 +58,30 @@
   -webkit-backdrop-filter: blur(6px);
   border: 1px solid v.$color-card-border;
 }
+
+.starsContainer {
+
+}
+
+.starsIcon {
+    display: block;
+    margin: 24px auto 0;
+    height: auto;
+}
+
+// DESKTOP
+  @media (min-width: 1024px) {
+  .womenSection {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
+
+
+  .tarotDeckDescription h2 {
+    text-align: left;
+  }
+}
+

@@ -1,10 +1,10 @@
 import styles from "./WomenSection.module.scss";
 import womenSectionImg from "../../assets/images/ada-lovelace-img.svg";
 import flaskIcon from "../../assets/images/flask-icon.svg";
-
+import starsIcon from "../../assets/icons/stars.png";
 function WomenSection() {
   return (
-    <section>
+    <section className={styles.womenSection}>
       <div className={styles.tarotDeckContent}>
         <div className={styles.stemTarotDivider}>
           <img src={flaskIcon} alt="Icono de una ampolla de laboratorio"></img>
@@ -30,6 +30,9 @@ function WomenSection() {
         <h3>Ada Lovelace</h3>
         <p>La Suma Sacerdotisa del Código</p>
       </div>
+      </div>
+      <div className={styles.starsContainer}>
+      <img className={styles.starsIcon} src={starsIcon} alt="Icono de decoración con tres estrellas"></img>
       </div>
     </section>
   );
