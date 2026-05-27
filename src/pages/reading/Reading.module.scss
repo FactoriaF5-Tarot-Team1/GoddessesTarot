@@ -10,7 +10,6 @@
   padding-bottom: 3rem;
 
   gap: 1.75rem;
-
 }
 
 .textLines {
@@ -66,6 +65,7 @@
     flex-direction: row;
     justify-content: space-around;
   }
+}
 
 /* DESKTOP */
 @media screen and (min-width: 1024px) {
@@ -79,4 +79,5 @@
     p {
       max-width: 40rem;
     }
+  }
 }
