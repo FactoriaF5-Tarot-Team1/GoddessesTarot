@@ -1,0 +1,18 @@
+.fan {
+  position: relative;
+  width: 100vw;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  & > * {
+    position: absolute;
+    bottom: 0;
+    transform-origin: bottom center;
+  }
+
+  @media (min-width: 768px) {
+    height: 220px;
+  }
+}
