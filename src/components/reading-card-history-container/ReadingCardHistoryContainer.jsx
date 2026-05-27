@@ -23,7 +23,7 @@ function ReadingCardHistoryContainer({ reading }) {
               alt={cards?.past?.arcaneName || "Carta del pasado"}
             />
             <p className={styles.cardLabel}>Pasado</p>
-            <span className={styles.cardName}>{cards?.past?.arcaneName}</span>
+            <span className={styles.cardName}>{cards?.past?.a<rcaneName}</span>
           </li>
 
           <li className={styles.card}>

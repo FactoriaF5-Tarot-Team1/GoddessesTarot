@@ -32,7 +32,38 @@ const mock = [
       },
     },
   },
+
+  {
+    id: "mock-2",
+    name: "María José",
+    date: "12 de febrero de 2026",
+    time: "09:14",
+    cards: {
+      past: {
+        arcaneName: "El Loco",
+        arcaneImage: {
+          imageSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/9/90/RWS_Tarot_00_Fool.jpg",
+        },
+      },
+      present: {
+        arcaneName: "La Emperatriz",
+        arcaneImage: {
+          imageSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/d/d2/RWS_Tarot_03_Empress.jpg",
+        },
+      },
+      future: {
+        arcaneName: "El Sol",
+        arcaneImage: {
+          imageSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/1/17/RWS_Tarot_19_Sun.jpg",
+        },
+      },
+    },
+  },
 ];
+
 
 export function ReadingProvider({ children }) {
   const [readingData, setReadingData] = useState(null);

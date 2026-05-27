@@ -11,14 +11,16 @@ function History() {
     <>
       <section className={styles.historyContainer}>
         <p className={styles.subtitle}>Sabiduría en datos</p>
-        <h2 className={styles.title}>Historial de Lecturas</h2>
+        <div className={styles.headerDivider}>
+          <h2 className={styles.title}>Historial de Lecturas</h2>
 
-        {history.length > 0 && (
-          <Button variant={"delete"} onClick={clearHistory}>
-            <img src={Bin} alt="Icono de una papelera de basura" />
-            Eliminar todas las lecturas
-          </Button>
-        )}
+          {history.length > 0 && (
+            <Button variant={"delete"} onClick={clearHistory}>
+              <img src={Bin} alt="Icono de una papelera de basura" />
+              Eliminar todas las lecturas
+            </Button>
+          )}
+        </div>
       </section>
 
       {history.length === 0 && (
@@ -28,9 +30,11 @@ function History() {
         </p>
       )}
 
-      {history.map((reading) => (
-        <ReadingCardHistoryContainer key={reading.id} reading={reading} />
-      ))}
+      {[...history]
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .map((reading) => (
+          <ReadingCardHistoryContainer key={reading.id} reading={reading} />
+        ))}
     </>
   );
 }

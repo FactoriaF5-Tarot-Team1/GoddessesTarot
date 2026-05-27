@@ -1,7 +1,7 @@
 @use "../../styles/variables" as v;
 
 .cardHistoryWrapper {
-  padding: 0 2rem;
+  padding: 0 2rem 2rem;
 }
 
 .readingDate {
@@ -75,4 +75,15 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+
+// RESPONSIVE
+
+// DESKTOP
+@media (min-width: 1024px) {
+  .cardHistoryWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
