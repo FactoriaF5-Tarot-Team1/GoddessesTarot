@@ -12,7 +12,7 @@ function ReadingCardHistoryContainer({ reading }) {
 
       <div className={styles.readingContainer}>
         <div className={styles.readingInfo}>
-          <p className={styles.readingName}>Lectura de: {name}</p>
+          <p className={styles.readingName}>Lectura de {name}</p>
           <p className={styles.readingTime}>{time} h</p>
         </div>
 
