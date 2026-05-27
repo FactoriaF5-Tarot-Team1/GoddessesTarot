@@ -4,7 +4,7 @@ import Reading from "../reading/Reading";
 function Home() {
   return (
     <>
-    <Reading></Reading>
+    
     </>
   );
 }
