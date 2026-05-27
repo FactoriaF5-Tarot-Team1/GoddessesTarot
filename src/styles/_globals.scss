@@ -5,7 +5,8 @@
 body {
   color: v.$color-text;
   background-color: v.$color-bg;
-  font-family: v.$font-seconday;
+  font-family: v.$font-secondary;
+  font-size: 1rem;
 }
 
 h1,
@@ -13,6 +14,22 @@ h2 {
   font-family: v.$font-primary;
   color: v.$color-accent;
 }
+ 
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+} 
+
+h3 {
+  font-size: 2rem;
+} 
+
+h4 {
+  font-size: 1.5rem;
+} 
 
 html,
 body {
