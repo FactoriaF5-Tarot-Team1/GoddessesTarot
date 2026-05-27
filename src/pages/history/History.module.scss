@@ -1,0 +1,14 @@
+@use "../../styles/variables" as v;
+
+.historyContainer {
+  padding: 2rem;
+}
+.subtitle {
+  text-transform: uppercase;
+  color: v.$color-accent;
+}
+
+.title {
+  color: v.$color-txt-btn;
+  padding-block: 1rem;
+}
