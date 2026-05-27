@@ -8,7 +8,7 @@ function ReadingCardHistoryContainer({ reading }) {
 
   return (
     <section className={styles.cardHistoryWrapper}>
-      <p className={styles.readingDate}>{date}</p>
+      <h3 className={styles.readingDate}>{date}</h3>
 
       <div className={styles.readingContainer}>
         <div className={styles.readingInfo}>

@@ -1,0 +1,69 @@
+@use "../../styles/variables" as v;
+
+
+.cardHistoryWrapper {
+  padding: 0 2rem;
+}
+
+.readingDate {
+    color: v.$color-txt-btn;
+    padding-bottom: 2rem;
+}
+
+.readingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.readingInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.readingName {
+  font-weight: 600;
+  color: v.$color-txt-btn;
+}
+
+.readingTime {
+  color: v.$color-accent;
+  font-size: 0.9rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card {
+  flex: 1;
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: 120px;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.cardLabel {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: v.$color-accent;
+  margin-bottom: 0.25rem;
+}
+
+.cardName {
+  font-weight: 600;
+  color: v.$color-txt-btn;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
