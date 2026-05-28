@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import styles from "./Reading.module.scss";
+
+import TarotModal from "../../components/modal/TarotModal";
 import line from "../../assets/icons/line.svg";
+
 import Fan from "../../components/fan/Fan";
 import TurnIndicator from "../../components/turn-indicator/TurnIndicator";
 import CardSlot from "../../components/card-slot/CardSlot";
+
 import useFanCards from "../../hooks/useFanCards";
 import btnShuffle from "../../assets/icons/btn-shuffle.svg";
 import btnSave from "../../assets/icons/btn-save.svg";
@@ -11,11 +15,19 @@ import { useReading } from "../../context/ReadingContext";
 import Button from "../../components/button/Button";
 
 function Reading() {
-  const { shuffledIds, selectCard, selectedCards, currentTurn, openModal } =
-    useFanCards();
+  const {
+    shuffledIds,
+    shuffledCards,
+    selectCard,
+    selectedCards,
+    currentTurn,
+    openModal,
+    modalCard,
+    closeModal,
+  } = useFanCards();
 
   const handleClick = () => {
-    window.location.reload(); // Recarga la página para barajar de nuevo
+    window.location.reload();
   };
 
   const { readingData, addReadingToHistory } = useReading();
@@ -44,30 +56,36 @@ function Reading() {
 
   return (
     <>
+      {/* HERO */}
       <section className={styles.readingHero}>
         <div className={styles.textLines}>
           <img src={line} alt="linea" />
-          <p>CONEXIÓN CUANTICA</p>
+          <p>CONEXIÓN CUÁNTICA</p>
           <img src={line} alt="linea" />
         </div>
+
         <div className={styles.heroContent}>
           <h1>Elige tus cartas</h1>
           <p>
             Permite que la sincronicidad entre los algoritmos del cosmos y tu
-            intuición guien esta tirada.
+            intuición guíen esta tirada.
           </p>
         </div>
       </section>
 
+      {/* FAN */}
       <section className={styles.readingFan}>
         <Fan
-          shuffledIds={shuffledIds}
+          shuffledCards={shuffledCards}
           selectCard={selectCard}
           selectedCards={selectedCards}
-        ></Fan>
+           openModal={openModal}
+        />
+
         <TurnIndicator currentTurn={currentTurn} />
       </section>
 
+      {/* SLOTS */}
       <section className={styles.slotsContainer}>
         <CardSlot turn="pasado" card={selectedCards[0]} openModal={openModal} />
         <CardSlot
@@ -78,6 +96,7 @@ function Reading() {
         <CardSlot turn="futuro" card={selectedCards[2]} openModal={openModal} />
       </section>
 
+      {modalCard && <TarotModal card={modalCard} onClose={closeModal} />}
       <section className={styles.sectionButons}>
         <Button variant={"primary"} size={"size"} onClick={handleClick}>
           <img src={btnShuffle} alt="icono de barajar de nuevo" /> Barajar de

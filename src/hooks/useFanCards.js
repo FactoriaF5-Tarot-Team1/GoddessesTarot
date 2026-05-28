@@ -1,13 +1,33 @@
-import { useState } from "react";
-import shuffleIds from "../utils/shuffleIds";
+import { useEffect, useState } from "react";
 
 function useFanCards() {
-  const [shuffledIds] = useState(() => shuffleIds());
+  const [shuffledCards, setShuffledCards] = useState([]);
+
   const [selectedCards, setSelectedCards] = useState([]);
   const [modalCard, setModalCard] = useState(null);
 
   const turns = ["pasado", "presente", "futuro"];
   const currentTurn = turns[selectedCards.length];
+
+  useEffect(() => {
+    async function getCards() {
+      try {
+        const res = await fetch(
+          "https://6872278c76a5723aacd3cbb3.mockapi.io/api/v1/tarot",
+        );
+        const data = await res.json();
+
+        // mezclar cartas directamente
+        const shuffled = [...data].sort(() => Math.random() - 0.5);
+
+        setShuffledCards(shuffled);
+      } catch (error) {
+        console.error("Error cargando cartas:", error);
+      }
+    }
+
+    getCards();
+  }, []);
 
   function selectCard(cardData) {
     if (selectedCards.length >= 3) return;
@@ -23,7 +43,7 @@ function useFanCards() {
   }
 
   return {
-    shuffledIds,
+    shuffledCards,
     selectedCards,
     currentTurn,
     selectCard,

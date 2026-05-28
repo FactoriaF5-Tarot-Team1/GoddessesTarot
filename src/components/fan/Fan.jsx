@@ -1,18 +1,22 @@
 import CardFan from "../card-fan/CardFan";
 import styles from "./Fan.module.scss";
 
-function Fan({ shuffledIds, selectCard, selectedCards }) {
+function Fan({
+  shuffledCards = [],
+  selectCard,
+  selectedCards = [],
+  openModal,
+}) {
+  if (!Array.isArray(shuffledCards)) return null;
+
   return (
     <div className={styles.fan}>
-      {shuffledIds.map((id, index) => (
+      {shuffledCards.map((card, index) => (
         <CardFan
-          key={id}
-          id={id}
+          card={card}
           selectCard={selectCard}
           isDisabled={selectedCards.length >= 3}
-          style={{
-            "--rotation": `${getRotation(index)}deg`,
-          }}
+          style={{ "--rotation": `${getRotation(index)}deg` }}
         />
       ))}
     </div>
