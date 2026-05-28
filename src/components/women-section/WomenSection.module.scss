@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: thin ridge v.$color-card-border;
 }
 
 .womenSectionContainer {
@@ -35,6 +36,8 @@
 .tarotDeckDescription {
   width: 100%;
   max-width: 420px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 
   h2 {
@@ -98,6 +101,17 @@
     gap: 24px;
   }
 
+  .stemTarotDivider {
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+
+  .tarotDeckContent {
+    padding: 0;
+    flex: 1;
+    align-items: flex-start;
+  }
+
   .adaLovelaceContainer {
     order: unset;
     margin: 0;
@@ -109,30 +123,25 @@
     padding: 0.5rem;
     bottom: 16px;
     h3 {
-      font-size: 1.1rem; // Keeps "Ada Lovelace" cleanly on a single line
       white-space: nowrap;
     }
     p {
-      font-size: 0.75rem; // Scales subtitle text down smoothly
       white-space: nowrap;
     }
+  }
 
-    .tarotDeckContent {
-      padding: 0;
-      flex: 1;
+  .tarotDeckDescription {
+    max-width: 440px;
+    align-items: flex-start;
+
+    h2 {
+      text-align: left;
+    }
+    p {
+      text-wrap: balance;
     }
   }
-    .tarotDeckDescription {
-      max-width: 440px;
-
-      h2 {
-        text-align: left;
-      }
-      p {
-        text-wrap: balance;
-      }
-    }
-  }
+}
 
 // DESKTOP
 @media (min-width: 1024px) {
@@ -141,29 +150,13 @@
   }
 
   .womenSectionContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 48px;
+    gap: 64px;
     max-width: 1100px;
   }
 
-  .tarotDeckDescription {
-    max-width: 540px;
-
-    h2 {
-      text-align: left;
-    }
-
-    p {
-      text-wrap: balance;
-    }
-  }
-
   .adaLovelaceContainer {
-    margin: 0;
     max-width: 400px;
+    flex: 0 0 400px;
   }
 
   .cardOverlayText {
@@ -176,5 +169,9 @@
     p {
       font-size: 0.9rem;
     }
+  }
+
+  .tarotDeckDescription {
+    max-width: 540px;
   }
 }
