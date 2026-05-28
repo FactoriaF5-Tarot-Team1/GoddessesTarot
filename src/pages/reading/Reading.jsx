@@ -79,7 +79,7 @@ function Reading() {
           shuffledCards={shuffledCards}
           selectCard={selectCard}
           selectedCards={selectedCards}
-           openModal={openModal}
+          openModal={openModal}
         />
 
         <TurnIndicator currentTurn={currentTurn} />
@@ -105,7 +105,9 @@ function Reading() {
         <Button variant={"secondary"} size={"size"} onClick={handleSave}>
           <img src={btnSave} alt="icono de guardar tirada" /> Guardar tirada
         </Button>
-        {saved && <p className={styles.saved}>Lectura guardada ✓</p>}
+        <p className={`${styles.saved} ${saved ? styles.visible : ""}`}>
+          Lectura guardada ✓
+        </p>{" "}
       </section>
     </>
   );
