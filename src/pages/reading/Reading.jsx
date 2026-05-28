@@ -16,9 +16,8 @@ function Reading() {
 
   const handleClick = () => {
     window.location.reload(); // Recarga la página para barajar de nuevo
-  
-  }
-  
+  };
+
   const { readingData, addReadingToHistory } = useReading();
 
   const [saved, setSaved] = useState(false);
@@ -81,14 +80,15 @@ function Reading() {
 
       <section className={styles.sectionButons}>
         <Button variant={"primary"} size={"size"} onClick={handleClick}>
-            <img src={btnShuffle} alt="icono de barajar de nuevo" /> Barajar de nuevo
+          <img src={btnShuffle} alt="icono de barajar de nuevo" /> Barajar de
+          nuevo
         </Button>
-        <Button variant={"secondary"} size={"size"} onClick={handleSave}> 
-            <img src={btnSave} alt="icono de guardar tirada" /> Guardar tirada
-         </Button>
-       {saved && <p className={styles.saved}>Lectura guardada ✓</p>}
+        <Button variant={"secondary"} size={"size"} onClick={handleSave}>
+          <img src={btnSave} alt="icono de guardar tirada" /> Guardar tirada
+        </Button>
+        {saved && <p className={styles.saved}>Lectura guardada ✓</p>}
       </section>
-     </>
+    </>
   );
 }
 
