@@ -3,7 +3,7 @@ import Hero from "../../components/hero/Hero";
 import SectionReadingHome from '../../components/section-reading-home/SectionReadingHome'
 import styles from './Home.module.scss'
 import { arraySectionReadingHome } from '../../assets/data/dataGoodessTarot'; 
-
+import WomenSection from "../../components/women-section/WomenSection";
 
 function Home() {
   
@@ -14,6 +14,7 @@ function Home() {
   return (
     <>
       <Hero></Hero>
+      <WomenSection></WomenSection>
 
       <section className={styles.sectionReading}>
         <h2>Tirada de 3 Cartas</h2>
