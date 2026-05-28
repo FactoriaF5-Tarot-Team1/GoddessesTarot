@@ -31,7 +31,7 @@ function History() {
       )}
 
       {[...history]
-        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .sort((a, b) => b.timestamp - a.timestamp)
         .map((reading) => (
           <ReadingCardHistoryContainer key={reading.id} reading={reading} />
         ))}

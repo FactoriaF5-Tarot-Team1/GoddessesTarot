@@ -2,9 +2,12 @@ import Button from "../button/Button";
 import Bin from "../../assets/icons/bin.svg";
 import Wand from "../../assets/icons/wand.svg";
 import styles from "./ReadingCardHistoryContainer.module.scss";
+import { useReading } from "../../context/ReadingContext";
 
 function ReadingCardHistoryContainer({ reading }) {
   const { name, date, time, cards } = reading;
+
+  const { deleteReading } = useReading();
 
   return (
     <section className={styles.cardHistoryWrapper}>
@@ -23,7 +26,7 @@ function ReadingCardHistoryContainer({ reading }) {
               alt={cards?.past?.arcaneName || "Carta del pasado"}
             />
             <p className={styles.cardLabel}>Pasado</p>
-            <span className={styles.cardName}>{cards?.past?.a<rcaneName}</span>
+            <span className={styles.cardName}>{cards?.past?.arcaneName}</span>
           </li>
 
           <li className={styles.card}>
@@ -55,8 +58,8 @@ function ReadingCardHistoryContainer({ reading }) {
             />
             Editar
           </Button>
-          <Button variant={"delete"}>
-            <img src={Bin} alt="Icono de una papelera de basura" />
+          <Button variant="delete" onClick={() => deleteReading(reading.id)}>
+            <img src={Bin} alt="Eliminar" />
             Eliminar
           </Button>
         </div>
