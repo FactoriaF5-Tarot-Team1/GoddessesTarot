@@ -114,7 +114,9 @@ function Reading() {
         >
           <img src={btnSave} alt="icono de guardar tirada" /> Guardar tirada
         </Button>
-        {saved && <p className={styles.saved}>Lectura guardada ✓</p>}
+        <p className={`${styles.saved} ${saved ? styles.visible : ""}`}>
+          Lectura guardada ✓
+        </p>{" "}
       </section>
     </>
   );
