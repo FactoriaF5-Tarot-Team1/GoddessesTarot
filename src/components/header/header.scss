@@ -136,8 +136,7 @@
 
     display: flex;
     flex-direction: column;
-
-    gap: 2rem;
+    gap: 1rem;
 
     a {
       display: flex;
@@ -180,9 +179,9 @@
     color: rgb(242 202 80 / 0.5);
 
     span {
+      padding-bottom: 0rem;
       width: 90px;
       height: 1px;
-
       background: rgb(242 202 80 / 0.3);
     }
   }
