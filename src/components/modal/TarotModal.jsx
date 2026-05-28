@@ -1,34 +1,60 @@
-import "./TarotModal.scss";
+import styles from "./TarotModal.module.scss";
 
-export default function TarotModal({ card, isOpen, onClose }) {
-  if (!isOpen || !card) return null;
+function TarotModal({ card, onClose }) {
+  if (!card) return null;
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal" onClick={(e) => e.stopPropagation()}>
-        {/* BOTÓN CERRAR */}
-        <button className="modal__close" onClick={onClose}>
+    <div className={styles.overlay} onClick={onClose}>
+      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+        {/* CERRAR */}
+        <button className={styles.closeBtn} onClick={onClose}>
           ✕
         </button>
 
-        {/* IMAGEN CARTA */}
-        <div className="modal__image-container">
+        {/* =========================
+            GODDESS
+        ========================= */}
+
+        <div className={styles.goddessSection}>
           <img
-            src={card.goddessImage}
+            className={styles.goddessImage}
+            src={card.goddessImage?.imageSrc}
             alt={card.goddessName}
-            className="modal__image"
           />
+
+          <div className={styles.goddessContent}>
+            <p className={styles.goddessSubtitle}>Goddess of Wisdom</p>
+
+            <h2 className={styles.goddessName}>{card.goddessName}</h2>
+
+            <p className={styles.goddessDescription}>
+              {card.goddessDescription}
+            </p>
+          </div>
         </div>
 
-        {/* CONTENIDO */}
-        <div className="modal__content">
-          <h2 className="modal__title">{card.goddessName}</h2>
+        {/* =========================
+            TAROT CARD
+        ========================= */}
 
-          <p className="modal__description">
-            {card.goddessDescription}
-          </p>
+        <div className={styles.content}>
+          <p className={styles.subtitle}>Arcano revelado</p>
+
+          <h2 className={styles.title}>{card.arcaneName}</h2>
+          <div className={styles.imageContainer}>
+            <img
+              className={styles.image}
+              src={card.arcaneImage?.imageSrc}
+              alt={card.arcaneName}
+            />
+          </div>
+          <div className={styles.line}></div>
+
+          <p className={styles.description}>{card.arcaneDescription}</p>
         </div>
       </div>
     </div>
   );
 }
+
+export default TarotModal;

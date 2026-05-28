@@ -1,42 +1,31 @@
-import { useEffect, useState } from "react";
-import TarotModal from "../../components/TarotModal/TarotModal";
+import useFanCards from "../../hooks/useFanCards";
+import TarotModal from "./TarotModal";
+import CardSlot from "../card-slot/CardSlot";
+import Fan from "../fan/Fan";
 
 export default function TarotPage() {
-  const [cards, setCards] = useState([]);
-  const [selectedCard, setSelectedCard] = useState(null);
-  const [openModal, setOpenModal] = useState(false);
-
-  useEffect(() => {
-    fetch("https://6872278c76a5723aacd3cbb3.mockapi.io/api/v1/tarot")
-      .then((response) => response.json())
-      .then((data) => setCards(data))
-      .catch((error) => console.error(error));
-  }, []);
-
-  const handleOpenModal = (card) => {
-    setSelectedCard(card);
-    setOpenModal(true);
-  };
+  const {
+    shuffledCards,
+    selectedCards,
+    selectCard,
+    modalCard,
+    openModal,
+    closeModal,
+    currentTurn,
+  } = useFanCards();
 
   return (
-    <>
-      <div className="cards-grid">
-        {cards.map((card) => (
-          <img
-            key={card.id}
-            src={card.goddessImage}
-            alt={card.goddessName}
-            onClick={() => handleOpenModal(card)}
-            style={{ width: "200px", cursor: "pointer" }}
-          />
-        ))}
-      </div>
-
-      <TarotModal
-        card={selectedCard}
-        isOpen={openModal}
-        onClose={() => setOpenModal(false)}
+  <>
+    <div className="cards">
+      <Fan
+        shuffledCards={shuffledCards}
+        selectCard={selectCard}
+        selectedCards={selectedCards}
       />
-    </>
-  );
-}
+    </div>
+
+    {modalCard && (
+  <TarotModal card={modalCard} onClose={closeModal} />
+)}
+  </>
+); 
