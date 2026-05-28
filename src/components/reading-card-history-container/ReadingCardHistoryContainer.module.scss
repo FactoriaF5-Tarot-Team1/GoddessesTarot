@@ -77,6 +77,15 @@
   gap: 1rem;
 }
 
+.editInput {
+  background: transparent;
+  border: 1px solid v.$color-accent;
+  color: v.$color-txt-btn;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
 // RESPONSIVE
 
 // DESKTOP
