@@ -22,6 +22,19 @@ function CardFan({ card, selectCard, isDisabled, style }) {
         isSelected ? styles.selected : ""
       } ${isDisabled ? styles.disabled : ""}`}
       onClick={handleClick}
+      className={`${styles.cardFan} ${isSelected ? styles.selected : ""} ${isDisabled ? styles.disabled : ""} ${isTouched ? styles.touched : ""}`}
+      onTouchStart={() => {
+        if (isDisabled) return;
+        setIsTouched(true);
+      }}
+      onTouchEnd={() => {
+        setIsTouched(false);
+        if (!isDisabled) handleClick();
+      }}
+      onClick={(e) => {
+        if (e.pointerType === "touch") return; // ignora clicks que vienen de touch
+        handleClick();
+      }}
     >
       <img src={cardBack} alt="carta del tarot boca abajo" />
     </div>
