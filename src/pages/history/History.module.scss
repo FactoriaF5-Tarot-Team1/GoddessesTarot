@@ -1,0 +1,31 @@
+@use "../../styles/variables" as v;
+
+.historyContainer {
+  padding: 2rem;
+}
+.subtitle {
+  text-transform: uppercase;
+  color: v.$color-accent;
+}
+
+.title {
+  color: v.$color-txt-btn;
+  padding-block: 1rem;
+}
+
+// RESPONSIVE
+
+// DESKTOP
+@media (min-width: 1024px) {
+  .historyContainer,
+  .emptyMessage {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .headerDivider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
