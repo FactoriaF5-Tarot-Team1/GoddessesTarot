@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Header.scss";
 
 import starsIcon from "../../assets/icons/stars.png";
@@ -32,11 +33,11 @@ export default function Header() {
 
         {/* NAV DESKTOP */}
         <nav className="header__nav">
-          <a href="/">
+          <Link to="/">
             <span>Inicio</span>
-          </a>
+          </Link>
 
-          <a href="/">Lecturas anteriores</a>
+          <Link to="/history">Lecturas anteriores</Link>
         </nav>
       </header>
 
@@ -61,8 +62,8 @@ export default function Header() {
         {/* LINKS MOBILE */}
         <nav className="menu__nav">
           {/* Inicio */}
-          <a
-            href="/"
+          <Link
+            to="/"
             className="menu__link--active"
             onClick={() => setMenuOpen(false)}
           >
@@ -70,13 +71,13 @@ export default function Header() {
 
             <span>Inicio</span>
 
-            <img src={bookIcon} alt="book icon" className="menu__icon" />
-          </a>
+          </Link>
 
           {/* Lecturas */}
-          <a href="/" onClick={() => setMenuOpen(false)}>
+          <Link to="/history" onClick={() => setMenuOpen(false)}>
+            <img src={bookIcon} alt="book icon" className="menu__icon" />
             Lecturas anteriores
-          </a>
+          </Link>
         </nav>
 
         {/* DECORACIÓN INFERIOR */}
