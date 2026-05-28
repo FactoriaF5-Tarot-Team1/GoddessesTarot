@@ -5,8 +5,16 @@ export const ReadingContext = createContext();
 export function ReadingProvider({ children }) {
   const [readingData, setReadingData] = useState(null);
   const [history, setHistory] = useState([]);
+
   const deleteReading = (id) => {
     setHistory((prev) => prev.filter((r) => r.id !== id));
+  };
+  const updateReading = (id, updatedFields) => {
+    setHistory((prev) =>
+      prev.map((reading) =>
+        reading.id === id ? { ...reading, ...updatedFields } : reading,
+      ),
+    );
   };
 
   useEffect(() => {
@@ -38,6 +46,7 @@ export function ReadingProvider({ children }) {
         addReadingToHistory,
         clearHistory,
         deleteReading,
+        updateReading,
       }}
     >
       {children}

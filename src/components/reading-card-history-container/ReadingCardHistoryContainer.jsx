@@ -1,13 +1,18 @@
 import Button from "../button/Button";
 import Bin from "../../assets/icons/bin.svg";
 import Wand from "../../assets/icons/wand.svg";
+import btnSave from "../../assets/icons/btn-save2.svg";
 import styles from "./ReadingCardHistoryContainer.module.scss";
 import { useReading } from "../../context/ReadingContext";
+import { useState } from "react";
 
 function ReadingCardHistoryContainer({ reading }) {
   const { name, date, time, cards } = reading;
 
-  const { deleteReading } = useReading();
+  const [isEditing, setIsEditing] = useState(false);
+  const [newName, setNewName] = useState(name);
+
+  const { deleteReading, updateReading } = useReading();
 
   return (
     <section className={styles.cardHistoryWrapper}>
@@ -15,7 +20,16 @@ function ReadingCardHistoryContainer({ reading }) {
 
       <div className={styles.readingContainer}>
         <div className={styles.readingInfo}>
-          <p className={styles.readingName}>Lectura de {name}</p>
+          {isEditing ? (
+            <input
+              className={styles.editInput}
+              value={newName}
+              onChange={(e) => setNewName(e.target.value)}
+            />
+          ) : (
+            <p className={styles.readingName}>Lectura de {name}</p>
+          )}
+
           <p className={styles.readingTime}>{time} h</p>
         </div>
 
@@ -51,15 +65,26 @@ function ReadingCardHistoryContainer({ reading }) {
         </ul>
 
         <div className={styles.actions}>
-          <Button variant={"primary"}>
-            <img
-              src={Wand}
-              alt="Icono de varita mágica como si fuera un lápiz para editar"
-            />
-            Editar
-          </Button>
+          {isEditing ? (
+            <Button
+              variant="primary"
+              onClick={() => {
+                updateReading(reading.id, { name: newName });
+                setIsEditing(false);
+              }}
+            >
+              <img src={btnSave} alt="Icono de varita mágica" />
+              Guardar
+            </Button>
+          ) : (
+            <Button variant="primary" onClick={() => setIsEditing(true)}>
+              <img src={Wand} alt="Icono de varita mágica" />
+              Editar
+            </Button>
+          )}
+
           <Button variant="delete" onClick={() => deleteReading(reading.id)}>
-            <img src={Bin} alt="Eliminar" />
+            <img src={Bin} alt="Icono de papelera" />
             Eliminar
           </Button>
         </div>
