@@ -57,6 +57,7 @@ npm run dev
 ```
 
 ## 🌳 Project Tree
+```
 GODDESSESTAROT/
 ├── public/                 # Static assets (favicons, public images, etc.)
 └── src/                    # Main application source code
@@ -74,7 +75,7 @@ GODDESSESTAROT/
 ├── index.html              # HTML template entry point
 ├── package.json            # Project dependencies and scripts
 └── vite.config.js          # Vite configuration
-
+```
 
 ## 👩‍💻 Authors
 Made with 💜 by:
