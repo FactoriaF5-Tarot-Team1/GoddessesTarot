@@ -1,4 +1,131 @@
 {
-  "readingHistory": [],
+  "readingHistory": [
+    {
+      "id": "d5L7pFE3F8g",
+      "name": "ffffff",
+      "date": "29 de mayo de 2026",
+      "time": "09:48",
+      "timestamp": 1780040930493,
+      "cards": {
+        "past": {
+          "id": "22",
+          "arcaneNumber": "XXI",
+          "arcaneName": "El Mundo",
+          "arcaneDescription": "La carta final de los arcanos mayores, el Mundo, representa tanto un cierre como un nuevo comienzo. Marca la culminación de un ciclo y la realización del destino que nos propusimos alcanzar. Es un punto de partida desde cero, que nos invita a renovarnos y explorar nuevamente. El Mundo nos impulsa a salir de nuestra zona de confort antes de que se convierta en una prisión dorada. Aquí llegamos y desde aquí partimos, siguiendo el ritmo cíclico de los arcanos. Esta carta está profundamente ligada al viaje interior y al descubrimiento constante.",
+          "arcaneImage": {
+            "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/f/ff/RWS_Tarot_21_World.jpg",
+            "author": "Pamela Coleman Smith, Rider-Waite Tarot",
+            "license": "Public domain"
+          },
+          "goddessName": "Alicia Asín",
+          "goddessDescription": "Alicia Asín Pérez (Zaragoza - España) es una destacada ingeniera informática y empresaria, cofundadora y CEO de Libelium, empresa especializada en soluciones de Internet de las Cosas (IoT) aplicadas a ciudades inteligentes, agricultura de precisión y sostenibilidad medioambiental. Licenciada en Ingeniería Informática por la Universidad de Zaragoza y con formación en ESADE y Cambridge Judge Business School, Asín ha sido pionera en la integración de IoT con inteligencia artificial y Big Data. Desde su fundación en 2006, Libelium ha desplegado sus tecnologías en más de 120 países y exporta el 90% de su facturación. Su labor ha sido reconocida con múltiples premios, en 2023, recibió la Medalla al Mérito Profesional del Gobierno de Aragón, destacando su contribución al desarrollo tecnológico y la visibilidad de las mujeres en carreras STEM. Además, es autora del libro Toma el control de tus datos (2024), donde reflexiona sobre la privacidad y el uso ético de la tecnología. Asín ha sido una voz decisiva en la promoción de la tecnología sostenible y su impacto positivo en la sociedad.",
+          "goddessImage": {
+            "imageSrc": "https://img.lavdg.com/sc/IQ7kePCJCJ9oAmnIFC_wYC8bW2k=/480x/2019/11/06/00121573058581801421204/Foto/HN7C6F1_174127.jpg",
+            "author": "Oliver Duch ",
+            "licenseUrl": "https://www.lavozdegalicia.es/noticia/coruna/2019/11/07/contando-verdad-chicas-ingenieria/0003_201911H7C6996.htm"
+          }
+        },
+        "present": {
+          "id": "21",
+          "arcaneNumber": "XX",
+          "arcaneName": "El Juicio",
+          "arcaneDescription": "La carta del Juicio aparece casi al final del viaje que comenzó con el Loco y culmina con el Mundo. Es una carta clave que marca la conclusión del proceso evolutivo que representan los arcanos mayores. Nos invita a tomar una acción definitiva: responder a nuestra verdadera vocación. El Juicio simboliza esa llamada profunda, la misión que nos guía en la vida. Antes de llegar a esta etapa, debimos mirar dentro de nosotros mismos, descubrir nuestra esencia auténtica y el mensaje que queremos compartir con el mundo. Cumplido este paso con sinceridad, alcanzaremos la verdadera libertad.",
+          "arcaneImage": {
+            "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/d/dd/RWS_Tarot_20_Judgement.jpg",
+            "author": "Pamela Coleman Smith, Rider-Waite Tarot",
+            "license": "Public domain"
+          },
+          "goddessName": "Barbarita Lara",
+          "goddessDescription": "Barbarita Lara Martínez (Santiago - Chile) es una ingeniera de ejecución en informática, reconocida por su contribución a la innovación tecnológica con impacto social. Es directora general y cofundadora de EMERCOM, una empresa dedicada a desarrollar soluciones disruptivas de comunicación. En 2015, ideó el Sistema de Información de Emergencia (SiE), una plataforma que permite enviar mensajes de emergencia a la población afectada por desastres naturales, incluso sin conexión a internet o redes móviles, utilizando ondas de radio y tecnología de alta frecuencia. Este sistema le permitió obtener una patente en 2017 y ha sido destacado por el MIT Technology Review como uno de los innovadores menores de 35 años en América Latina. Además, ha sido reconocida con premios como el Premio Ada Byron a la Mujer Tecnóloga en Chile 2022 y ha sido incluida en la lista de las 50 mujeres más poderosas de Chile en 2024 por la revista Forbes. Su trabajo ha sido fundamental para promover la participación de las mujeres en el ámbito STEM y para desarrollar tecnologías que mejoren la resiliencia de las comunidades ante emergencias.",
+          "goddessImage": {
+            "imageSrc": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/C658/production/_103367705_2f0a7921-8eb9-447f-a5af-6e8435c667b2.jpg.webp",
+            "author": "BBC News Mundo",
+            "licenseUrl": "https://www.bbc.com/mundo/noticias-45472111"
+          }
+        },
+        "future": {
+          "id": "19",
+          "arcaneNumber": "XVIII",
+          "arcaneName": "La Luna",
+          "arcaneDescription": "Bajo el resplandor de la luna se despierta el espíritu libre del bosque, acompañado por una mirada cargada de intuición. La luz lunar distorsiona la realidad, mostrando un reflejo fantástico en lugar de la verdad directa. La carta de la Luna simboliza la incertidumbre más que las respuestas, representando la magia en su estado más puro, susceptible de múltiples interpretaciones. Es el mundo interior, lo cambiante, lo imaginario y lo oculto. La Luna surge en un espacio donde lo interno y lo externo se entrelazan, un lugar capaz de crear nuevos universos.",
+          "arcaneImage": {
+            "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/7/7f/RWS_Tarot_18_Moon.jpg",
+            "author": "Pamela Coleman Smith, Rider-Waite Tarot",
+            "license": "Public domain"
+          },
+          "goddessName": "Reshma Saujani",
+          "goddessDescription": "Reshma Saujani (Illinois - EEUU) es una activista, abogada y autora reconocida por fundar Girls Who Code, una organización sin fines de lucro dedicada a reducir la brecha de género en la tecnología, y Moms First (anteriormente Marshall Plan for Moms), que aboga por políticas laborales que apoyen a las madres trabajadoras. Comenzó su carrera como abogada y organizadora política, siendo la primera mujer indoamericana (descendiente del pueblo Gujarati) en postularse para el Congreso de EE. UU. en 2010. Su TED Talk, 'Teach girls bravery, not perfection', ha sido vista por más de 54 millones de personas y su libro Brave, Not Perfect se convirtió en un bestseller del New York Times. Ha sido reconocida en listas como Fortune 40 Under 40 y Forbes Most Powerful Women Changing the World.",
+          "goddessImage": {
+            "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/a/aa/2018-prathamusa-reshma-saujani.jpg",
+            "author": "Fuzheado, CC BY-SA 4.0, via Wikimedia Commons",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+          }
+        }
+      }
+    },
+    {
+      "id": "_J7KKOKm0Eg",
+      "name": "fff",
+      "date": "29 de mayo de 2026",
+      "time": "09:54",
+      "timestamp": 1780041325360,
+      "cards": {
+        "past": {
+          "id": "17",
+          "arcaneNumber": "XVI",
+          "arcaneName": "La Torre",
+          "arcaneDescription": "La Torre simboliza la rebelión y la interrupción abrupta de lo conocido. Representa un evento inesperado, poderoso tanto para destruir como para renovar. Es una revolución que transforma todo, pues nada volverá a ser igual. Frente al vacío, podemos resistir y caer o rendirnos y aprender a volar. Esta carta nos recuerda que al desaparecer las ataduras, las fronteras y los planes establecidos, el cielo se abre y el horizonte se ensancha, presentándonos un desafío que podemos elegir enfrentar o evitar.",
+          "arcaneImage": {
+            "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg",
+            "author": "Pamela Coleman Smith, Rider-Waite Tarot",
+            "license": "Public domain"
+          },
+          "goddessName": "Mira Murati",
+          "goddessDescription": "Mira Murati (Vlorë - Albania) es una ingeniera y empresaria. Tras obtener un doble grado en ingeniería mecánica e ingeniería en la Universidad de Dartmouth, inició su carrera en Tesla como jefa de producto del Model X. Posteriormente, trabajó en Leap Motion, especializada en interfaces de realidad aumentada, y en Zodiac Aerospace. En 2018 se unió a OpenAI, donde fue vicepresidenta de IA aplicada y CTO, liderando el desarrollo de modelos como ChatGPT, DALL·E y Codex. En 2023 fue CEO interina tras la salida de Sam Altman. En el año 2025, fundó Thinking Machines Lab, una startup de inteligencia artificial con el objetivo de desarrollar sistemas multimodales que trabajen de forma colaborativa con los usuarios y se adapten a una amplia gama de conocimientos humanos. La empresa ha recaudado 2.000 millones de dólares en una ronda de financiación, alcanzando una valoración de 12.000 millones de dólares. Thinking Machines Lab cuenta con un equipo de destacados investigadores de OpenAI, Meta, Google DeepMind y Mistral, y tiene como misión mejorar la comprensión y personalización de los sistemas de IA, promoviendo una ciencia abierta y colaborativa.",
+          "goddessImage": {
+            "imageSrc": "https://imagenes.elpais.com/resizer/v2/IWJXGSLOKRHKVIQEO4WX5JCXLY.jpg?auth=6f2b593f9c1132bab59ab6b729eb01e70c52e49cdb2d6894b7758f57d168eb1f&width=414",
+            "author": "Philip Pacheco (Bloomberg)",
+            "licenseUrl": "https://elpais.com/tecnologia/2023-12-13/quien-es-mira-murati-una-de-las-mujeres-mas-influyentes-del-mundo-en-2023.html"
+          }
+        },
+        "present": {
+          "id": "15",
+          "arcaneNumber": "XIV",
+          "arcaneName": "La Templanza",
+          "arcaneDescription": "La Templanza representa al alquimista que domina el arte de combinar con precisión los elementos necesarios para crear algo que trasciende sus partes individuales. Antes de enfrentar el caos y la intensidad sensorial que trae la carta XV, El Diablo, se atraviesa un estado de equilibrio simbolizado por la Templanza. Este es un espacio logrado gracias a la reflexión y la conciliación de fuerzas opuestas.",
+          "arcaneImage": {
+            "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/f/f8/RWS_Tarot_14_Temperance.jpg",
+            "author": "Pamela Coleman Smith, Rider-Waite Tarot",
+            "license": "Public domain"
+          },
+          "goddessName": "Nuria Oliver",
+          "goddessDescription": "Nuria Oliver (Alicante - España) es una ingeniera de telecomunicaciones y doctora en Inteligencia Artificial por el MIT, reconocida por su liderazgo en la investigación y aplicación de la IA para el bien social. Ha sido investigadora en Microsoft Research y ocupó cargos de dirección científica en Telefónica y Vodafone. Actualmente, es directora científica y cofundadora de ELLIS Alicante, unidad dedicada a la IA ética y responsable. Su trabajo se centra en el modelado del comportamiento humano mediante técnicas de IA, interacción persona-máquina y análisis de Big Data. Es autora de más de 200 publicaciones científicas y coinventora de 40 patentes. Ha recibido premios como el Premio Nacional de Informática, el Premio Rey Jaume I en Nuevas Tecnologías y el Premio Hipatia a la Excelencia Científica. Además, es miembro de la Real Academia de Ingeniería de España y Fellow de la ACM, IEEE y EurAI. Es una de las investigadoras más citadas en informática en España.",
+          "goddessImage": {
+            "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Nuria_Oliver_portrait_3.jpg",
+            "author": "ester perez broto, CC BY-SA 2.0, via Wikimedia Commons",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+          }
+        },
+        "future": {
+          "id": "16",
+          "arcaneNumber": "XV",
+          "arcaneName": "El Diablo",
+          "arcaneDescription": "La carta del Diablo aborda temas de opresión y libertad de elección. Nos confronta con nuestros temores y nos enseña que la única forma de vencerlos es nombrarlos, mirarlos de frente y aceptarlos. En el tarot, el Diablo está vinculado al libre albedrío, especialmente en los momentos en que parece más complicado ejercerlo. Representa la energía creativa, la fuerza erótica y dionisíaca que desata el caos y, a la vez, la libertad. Su mensaje sugiere que para salir del ciclo atrapante, solo hace falta romperlo.",
+          "arcaneImage": {
+            "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/5/55/RWS_Tarot_15_Devil.jpg",
+            "author": "Pamela Coleman Smith, Rider-Waite Tarot",
+            "license": "Public domain"
+          },
+          "goddessName": "Ghada Mohamed Amer",
+          "goddessDescription": "Ghada Mohamed Amer (Baréin - Egipto) es una destacada científica especializada en ingeniería eléctrica y telecomunicaciones, con enfoque en procesamiento de señales, sistemas de comunicación y tecnologías inalámbricas. Es Vicepresidenta de la Fundación Árabe de Ciencia y Tecnología, donde ha desarrollado y liderado más de 20 proyectos y programas para fomentar la innovación y el emprendimiento en el mundo árabe, contribuyendo al establecimiento de 142 startups en la región. Ha desarrollado investigaciones relevantes en áreas como comunicaciones móviles, redes de sensores y sistemas de comunicación óptica. Ha publicado numerosos artículos en revistas internacionales y conferencias, contribuyendo al avance tecnológico en su campo. También ha participado en proyectos de colaboración internacional y en la formación de nuevos profesionales en ingeniería. Su trabajo ha impulsado la innovación en tecnologías de comunicación en Egipto y a nivel global, consolidándose como una referente en la academia y la investigación científica.",
+          "goddessImage": {
+            "imageSrc": "https://i1.rgstatic.net/ii/profile.image/796422005874690-1566893211860_Q128/Ghada-Amer.jpg",
+            "author": "ResearchGate GmbH",
+            "licenseUrl": "https://www.researchgate.net/profile/Ghada-Amer/2"
+          }
+        }
+      }
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
