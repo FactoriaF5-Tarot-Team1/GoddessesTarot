@@ -13,6 +13,7 @@ import btnShuffle from "../../assets/icons/btn-shuffle.svg";
 import btnSave from "../../assets/icons/btn-save.svg";
 import { useReading } from "../../context/ReadingContext";
 import Button from "../../components/button/Button";
+import { useNavigate } from "react-router-dom";
 
 function Reading() {
   const {
@@ -26,8 +27,10 @@ function Reading() {
     closeModal,
   } = useFanCards();
 
+  const navigate = useNavigate();
+
   const handleClick = () => {
-    window.location.reload();
+    navigate("/reading-name");
   };
 
   const { readingData, addReadingToHistory } = useReading();
@@ -35,6 +38,7 @@ function Reading() {
   const [saved, setSaved] = useState(false);
 
   function handleSave() {
+    if (saved) return;
     if (selectedCards.length < 3) return;
 
     const reading = {
@@ -79,7 +83,7 @@ function Reading() {
           shuffledCards={shuffledCards}
           selectCard={selectCard}
           selectedCards={selectedCards}
-           openModal={openModal}
+          openModal={openModal}
         />
 
         <TurnIndicator currentTurn={currentTurn} />
@@ -102,10 +106,17 @@ function Reading() {
           <img src={btnShuffle} alt="icono de barajar de nuevo" /> Barajar de
           nuevo
         </Button>
-        <Button variant={"secondary"} size={"size"} onClick={handleSave}>
+        <Button
+          variant={"secondary"}
+          size={"size"}
+          onClick={handleSave}
+          disabled={saved}
+        >
           <img src={btnSave} alt="icono de guardar tirada" /> Guardar tirada
         </Button>
-        {saved && <p className={styles.saved}>Lectura guardada ✓</p>}
+        <p className={`${styles.saved} ${saved ? styles.visible : ""}`}>
+          Lectura guardada ✓
+        </p>{" "}
       </section>
     </>
   );

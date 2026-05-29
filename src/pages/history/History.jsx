@@ -7,15 +7,18 @@ import { useReading } from "../../context/ReadingContext";
 function History() {
   const { history, clearHistory } = useReading();
 
+  const sortedHistory = [...history].sort((a, b) => b.timestamp - a.timestamp);
+
   return (
     <>
       <section className={styles.historyContainer}>
         <p className={styles.subtitle}>Sabiduría en datos</p>
+
         <div className={styles.headerDivider}>
           <h2 className={styles.title}>Historial de Lecturas</h2>
 
           {history.length > 0 && (
-            <Button variant={"delete"} onClick={clearHistory}>
+            <Button variant="delete" onClick={clearHistory}>
               <img src={Bin} alt="Icono de una papelera de basura" />
               Eliminar todas las lecturas
             </Button>
@@ -30,11 +33,9 @@ function History() {
         </p>
       )}
 
-      {[...history]
-        .sort((a, b) => b.timestamp - a.timestamp)
-        .map((reading) => (
-          <ReadingCardHistoryContainer key={reading.id} reading={reading} />
-        ))}
+      {sortedHistory.map((reading) => (
+        <ReadingCardHistoryContainer key={reading.id} reading={reading} />
+      ))}
     </>
   );
 }
