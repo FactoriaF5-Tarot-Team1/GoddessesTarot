@@ -35,7 +35,7 @@ Follow these steps to get the project up and running on your local machine.
 
 ### Prerequisites
 
-Make sure you have [Node.js](https://nodejs.org/) installed on your computer.
+Make sure you have [Node v24.14.1](https://nodejs.org/) installed on your computer.
 
 ### 1. Installation
 
