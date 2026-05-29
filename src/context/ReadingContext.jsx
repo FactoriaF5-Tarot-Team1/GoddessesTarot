@@ -1,11 +1,32 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { apiHistory } from "../services/apiHistory";
+import ConfirmModal from "../components/modal/confirm-modal/ConfirmModal"; 
 
 export const ReadingContext = createContext();
 
 export function ReadingProvider({ children }) {
   const [readingData, setReadingData] = useState(null);
   const [history, setHistory] = useState([]);
+
+  // Estado del modal de confirmación
+  const [confirmConfig, setConfirmConfig] = useState(null);
+
+  // Función para pedir confirmación con un modal estilizado
+  function askConfirmation(message) {
+    return new Promise((resolve) => {
+      setConfirmConfig({
+        message,
+        onConfirm: () => {
+          resolve(true);
+          setConfirmConfig(null);
+        },
+        onCancel: () => {
+          resolve(false);
+          setConfirmConfig(null);
+        },
+      });
+    });
+  }
 
   // 1. Cargar historial desde json-server
   useEffect(() => {
@@ -37,53 +58,61 @@ export function ReadingProvider({ children }) {
     }
   }
 
-  // 3. Actualizar
+  // 3. Actualizar lectura
   async function updateReading(id, updatedFields) {
-    if (
-      window.confirm("¿Estás seguro de que quieres actualizar esta lectura?")
-    ) {
-      try {
-        const current = history.find((r) => r.id === id);
+    const confirmed = await askConfirmation(
+      "¿Estás segura de que quieres actualizar esta lectura?"
+    );
 
-        const updatedReading = {
-          ...current,
-          ...updatedFields,
-        };
+    if (!confirmed) return;
 
-        const { data } = await apiHistory.update(id, updatedReading);
+    try {
+      const current = history.find((r) => r.id === id);
 
-        setHistory((prev) =>
-          prev.map((reading) => (reading.id === id ? data : reading)),
-        );
-      } catch (error) {
-        console.error("Error actualizando lectura:", error);
-      }
+      const updatedReading = {
+        ...current,
+        ...updatedFields,
+      };
+
+      const { data } = await apiHistory.update(id, updatedReading);
+
+      setHistory((prev) =>
+        prev.map((reading) => (reading.id === id ? data : reading))
+      );
+    } catch (error) {
+      console.error("Error actualizando lectura:", error);
     }
   }
 
-  // 4. Borrar lectura
+  // 4. Borrar lectura individual
   async function deleteReading(id) {
-    if (window.confirm("¿Estás seguro de que quieres eliminar esta lectura?")) {
-      try {
-        await apiHistory.delete(id);
-        setHistory((prev) => prev.filter((r) => r.id !== id));
-      } catch (error) {
-        console.error("Error borrando lectura:", error);
-      }
+    const confirmed = await askConfirmation(
+      "¿Estás segura de que quieres eliminar esta lectura?"
+    );
+
+    if (!confirmed) return;
+
+    try {
+      await apiHistory.delete(id);
+      setHistory((prev) => prev.filter((r) => r.id !== id));
+    } catch (error) {
+      console.error("Error borrando lectura:", error);
     }
   }
 
-  // 5. Borrar todo el historial (opcional)
+  // 5. Borrar todo el historial
   async function clearHistory() {
-    if (
-      window.confirm("¿Estás seguro de que quieres eliminar todas las lectura?")
-    ) {
-      try {
-        await Promise.all(history.map((item) => apiHistory.delete(item.id)));
-        setHistory([]);
-      } catch (error) {
-        console.error("Error borrando todo el historial:", error);
-      }
+    const confirmed = await askConfirmation(
+      "¿Estás segura de que quieres eliminar TODAS las lecturas?"
+    );
+
+    if (!confirmed) return;
+
+    try {
+      await Promise.all(history.map((item) => apiHistory.delete(item.id)));
+      setHistory([]);
+    } catch (error) {
+      console.error("Error borrando todo el historial:", error);
     }
   }
 
@@ -100,6 +129,15 @@ export function ReadingProvider({ children }) {
       }}
     >
       {children}
+
+      {/* Modal de confirmación */}
+      {confirmConfig && (
+        <ConfirmModal
+          message={confirmConfig.message}
+          onConfirm={confirmConfig.onConfirm}
+          onCancel={confirmConfig.onCancel}
+        />
+      )}
     </ReadingContext.Provider>
   );
 }
