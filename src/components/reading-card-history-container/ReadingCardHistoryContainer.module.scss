@@ -1,0 +1,112 @@
+@use "../../styles/variables" as v;
+
+.cardHistoryWrapper {
+  padding: 0 2rem 2rem;
+}
+
+.readingDate {
+  color: v.$color-txt-btn;
+  padding-bottom: 2rem;
+}
+
+.readingContainer {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: v.$color-card-bg;
+  border: 1px solid v.$color-card-border;
+  border-radius: v.$border-rad-tarot;
+}
+
+.readingInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.readingName {
+  font-weight: 600;
+  color: v.$color-accent;
+  font-size: 1.25rem;
+}
+
+.readingTime {
+  color: v.$color-txt-btn;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    max-width: 120px;
+    border-radius: v.$border-rad-tarot;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.cardLabel {
+  text-transform: uppercase;
+  color: v.$color-accent-70;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.cardName {
+  font-weight: 600;
+  color: v.$color-txt-btn;
+  text-transform: capitalize;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.editInput {
+  background: transparent;
+  border: 1px solid v.$color-accent;
+  color: v.$color-txt-btn;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+// RESPONSIVE
+
+// DESKTOP
+@media (min-width: 1024px) {
+  .cardHistoryWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .card {
+    img {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .readingContainer {
+    padding: 2rem 4rem;
+  }
+}
