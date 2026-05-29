@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Reading.module.scss";
 
-import TarotModal from "../../components/modal/TarotModal";
+import TarotModal from "../../components/modal/tarot-modal/TarotModal";
 import line from "../../assets/icons/line.svg";
 
 import Fan from "../../components/fan/Fan";

@@ -5,7 +5,7 @@ import btnSave from "../../assets/icons/btn-save2.svg";
 import styles from "./ReadingCardHistoryContainer.module.scss";
 import { useReading } from "../../context/ReadingContext";
 import { useState } from "react";
-import TarotModal from "../modal/TarotModal";
+import TarotModal from "../modal/tarot-modal/TarotModal";
 
 function ReadingCardHistoryContainer({ reading }) {
   const { name, date, time, cards } = reading;
