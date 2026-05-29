@@ -53,11 +53,11 @@ function Reading() {
         future: selectedCards[2],
       },
     };
-
-    addReadingToHistory(reading);
-    setSaved(true);
+   
+      addReadingToHistory(reading);
+      setSaved(true);
+    
   }
-
   return (
     <>
       {/* HERO */}

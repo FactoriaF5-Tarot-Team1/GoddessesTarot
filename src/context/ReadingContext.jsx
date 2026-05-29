@@ -37,43 +37,53 @@ export function ReadingProvider({ children }) {
     }
   }
 
-  // 3. Actualizar lectura
+  // 3. Actualizar
   async function updateReading(id, updatedFields) {
-    try {
-      const current = history.find((r) => r.id === id);
+    if (
+      window.confirm("¿Estás seguro de que quieres actualizar esta lectura?")
+    ) {
+      try {
+        const current = history.find((r) => r.id === id);
 
-      const updatedReading = {
-        ...current,
-        ...updatedFields,
-      };
+        const updatedReading = {
+          ...current,
+          ...updatedFields,
+        };
 
-      const { data } = await apiHistory.update(id, updatedReading);
+        const { data } = await apiHistory.update(id, updatedReading);
 
-      setHistory((prev) =>
-        prev.map((reading) => (reading.id === id ? data : reading)),
-      );
-    } catch (error) {
-      console.error("Error actualizando lectura:", error);
+        setHistory((prev) =>
+          prev.map((reading) => (reading.id === id ? data : reading)),
+        );
+      } catch (error) {
+        console.error("Error actualizando lectura:", error);
+      }
     }
   }
 
   // 4. Borrar lectura
   async function deleteReading(id) {
-    try {
-      await apiHistory.delete(id);
-      setHistory((prev) => prev.filter((r) => r.id !== id));
-    } catch (error) {
-      console.error("Error borrando lectura:", error);
+    if (window.confirm("¿Estás seguro de que quieres eliminar esta lectura?")) {
+      try {
+        await apiHistory.delete(id);
+        setHistory((prev) => prev.filter((r) => r.id !== id));
+      } catch (error) {
+        console.error("Error borrando lectura:", error);
+      }
     }
   }
 
   // 5. Borrar todo el historial (opcional)
   async function clearHistory() {
-    try {
-      await Promise.all(history.map((item) => apiHistory.delete(item.id)));
-      setHistory([]);
-    } catch (error) {
-      console.error("Error borrando todo el historial:", error);
+    if (
+      window.confirm("¿Estás seguro de que quieres eliminar todas las lectura?")
+    ) {
+      try {
+        await Promise.all(history.map((item) => apiHistory.delete(item.id)));
+        setHistory([]);
+      } catch (error) {
+        console.error("Error borrando todo el historial:", error);
+      }
     }
   }
 
