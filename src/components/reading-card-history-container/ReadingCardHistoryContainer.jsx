@@ -5,14 +5,19 @@ import btnSave from "../../assets/icons/btn-save2.svg";
 import styles from "./ReadingCardHistoryContainer.module.scss";
 import { useReading } from "../../context/ReadingContext";
 import { useState } from "react";
+import TarotModal from "../modal/TarotModal";
 
 function ReadingCardHistoryContainer({ reading }) {
   const { name, date, time, cards } = reading;
 
   const [isEditing, setIsEditing] = useState(false);
   const [newName, setNewName] = useState(name);
+  const [modalCard, setModalCard] = useState(null);
 
   const { deleteReading, updateReading } = useReading();
+
+  const openModal = (card) => setModalCard(card);
+  const closeModal = () => setModalCard(null);
 
   return (
     <section className={styles.cardHistoryWrapper}>
@@ -34,7 +39,7 @@ function ReadingCardHistoryContainer({ reading }) {
         </div>
 
         <ul className={styles.cards}>
-          <li className={styles.card}>
+          <li className={styles.card} onClick={() => openModal(cards?.past)}>
             <img
               src={cards?.past?.arcaneImage?.imageSrc}
               alt={cards?.past?.arcaneName || "Carta del pasado"}
@@ -43,7 +48,7 @@ function ReadingCardHistoryContainer({ reading }) {
             <span className={styles.cardName}>{cards?.past?.arcaneName}</span>
           </li>
 
-          <li className={styles.card}>
+          <li className={styles.card} onClick={() => openModal(cards?.present)}>
             <img
               src={cards?.present?.arcaneImage?.imageSrc}
               alt={cards?.present?.arcaneName || "Carta del presente"}
@@ -54,7 +59,7 @@ function ReadingCardHistoryContainer({ reading }) {
             </span>
           </li>
 
-          <li className={styles.card}>
+          <li className={styles.card} onClick={() => openModal(cards?.future)}>
             <img
               src={cards?.future?.arcaneImage?.imageSrc}
               alt={cards?.future?.arcaneName || "Carta del futuro"}
@@ -89,6 +94,7 @@ function ReadingCardHistoryContainer({ reading }) {
           </Button>
         </div>
       </div>
+      {modalCard && <TarotModal card={modalCard} onClose={closeModal} />}
     </section>
   );
 }
