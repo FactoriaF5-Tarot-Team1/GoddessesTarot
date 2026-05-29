@@ -35,7 +35,7 @@ Follow these steps to get the project up and running on your local machine.
 
 ### Prerequisites
 
-Make sure you have [Node.js](https://nodejs.org/) installed on your computer.
+Make sure you have [Node v24.14.1](https://nodejs.org/) installed on your computer.
 
 ### 1. Installation
 
@@ -57,6 +57,7 @@ npm run dev
 ```
 
 ## 🌳 Project Tree
+```
 GODDESSESTAROT/
 ├── public/                 # Static assets (favicons, public images, etc.)
 └── src/                    # Main application source code
@@ -74,7 +75,7 @@ GODDESSESTAROT/
 ├── index.html              # HTML template entry point
 ├── package.json            # Project dependencies and scripts
 └── vite.config.js          # Vite configuration
-
+```
 
 ## 👩‍💻 Authors
 Made with 💜 by:
