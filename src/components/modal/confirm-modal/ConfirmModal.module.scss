@@ -1,0 +1,103 @@
+@use "../../../styles/variables" as v;
+@use "../../../styles/mixins" as m;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+
+  animation: fadeIn 0.25s ease-out;
+}
+
+.modal {
+  @include m.glass-form;
+
+  width: 90%;
+  max-width: 420px;
+  padding: 2rem;
+  border-radius: v.$border-rad-card;
+  text-align: center;
+  position: relative;
+
+  background: v.$form-bg;
+  border: 1px solid v.$form-border;
+  box-shadow:
+    0 0 25px rgba(0, 0, 0, 0.4),
+    0 0 40px v.$halo-golden;
+
+  animation: scaleIn 0.25s ease-out;
+}
+
+.message {
+  font-family: v.$font-primary;
+  font-size: 1.4rem;
+  color: v.$color-accent;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cancel,
+.confirm {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border-radius: v.$border-rad-btn;
+  font-family: v.$font-secondary;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: none;
+}
+
+.cancel {
+  background: rgba(255, 255, 255, 0.05);
+  color: v.$color-text;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+.confirm {
+  background: v.$color-main-btn;
+  color: v.$color-txt-btn;
+  border: 1px solid v.$color-accent-70;
+
+  &:hover {
+    box-shadow: 0 0 12px v.$color-accent-70;
+    transform: translateY(-2px);
+  }
+}
+
+/* Animaciones suaves */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
