@@ -15,7 +15,7 @@ function CardFan({ card, selectCard, isDisabled, style }) {
     selectCard(card);
   }
 
-   return (
+  return (
     <div
       style={style}
       className={`${styles.cardFan} ${

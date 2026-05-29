@@ -2,24 +2,25 @@ import styles from "./TarotModal.module.scss";
 
 function TarotModal({ card, onClose }) {
   if (!card) return null;
-
+  console.log(card);
+  console.log(card.author);
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        {/* CERRAR */}
-        <button className={styles.closeBtn} onClick={onClose}>
+        <button
+          className={styles.closeBtn}
+          onClick={onClose}
+          aria-label="Cerrar modal"
+        >
           ✕
         </button>
 
-        {/* =========================
-            GODDESS
-        ========================= */}
-
+        {/* GODDESS */}
         <div className={styles.goddessSection}>
           <img
             className={styles.goddessImage}
-            src={card.goddessImage?.imageSrc}
-            alt={card.goddessName}
+            src={card.goddessImage?.imageSrc || ""}
+            alt={card.goddessName || "Goddess"}
           />
 
           <div className={styles.goddessContent}>
@@ -33,24 +34,27 @@ function TarotModal({ card, onClose }) {
           </div>
         </div>
 
-        {/* =========================
-            TAROT CARD
-        ========================= */}
-
+        {/* TAROT */}
         <div className={styles.content}>
           <p className={styles.subtitle}>Arcano revelado</p>
 
           <h2 className={styles.title}>{card.arcaneName}</h2>
+
           <div className={styles.imageContainer}>
             <img
               className={styles.image}
-              src={card.arcaneImage?.imageSrc}
-              alt={card.arcaneName}
+              src={card.arcaneImage?.imageSrc || ""}
+              alt={card.arcaneName || "Arcano"}
             />
           </div>
+
           <div className={styles.line}></div>
 
           <p className={styles.description}>{card.arcaneDescription}</p>
+
+          <p className={styles.copyright}>
+            Copyright © {card.arcaneImage?.author}
+          </p>
         </div>
       </div>
     </div>

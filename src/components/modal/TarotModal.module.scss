@@ -23,7 +23,7 @@
   position: relative;
 
   width: 90%;
-  max-width: 420px;
+  max-width: 520px;
 
   max-height: 90vh;
 
@@ -74,6 +74,8 @@
 
   background: rgba(255, 255, 255, 0.08);
 
+  backdrop-filter: blur(10px);
+
   color: v.$color-accent;
 
   font-size: 1rem;
@@ -91,6 +93,128 @@
   }
 }
 
+/* =========================
+   GODDESS SECTION
+========================= */
+
+.goddessSection {
+  padding: 2rem 1.5rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border-bottom: 1px solid rgba(242, 202, 80, 0.12);
+}
+
+.goddessContent {
+  width: 100%;
+}
+
+.goddessSubtitle {
+  color: rgba(242, 202, 80, 0.6);
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  font-size: 0.7rem;
+
+  margin-bottom: 0.5rem;
+}
+
+.goddessName {
+  color: v.$color-accent;
+
+  font-family: v.$font-primary;
+
+  font-size: 1.8rem;
+
+  margin-bottom: 1.2rem;
+}
+
+/* IMAGEN CENTRADA + OVERLAY */
+
+.goddessImage {
+  width: 220px;
+  height: 310px;
+
+  object-fit: cover;
+
+  display: block;
+
+  border: 2px solid #483a88;
+
+  margin: 1.5rem auto;
+
+  position: relative;
+
+  transition: all 0.45s ease;
+
+  filter: grayscale(100%) brightness(0.82) contrast(1.08);
+
+  box-shadow:
+    0 0 25px rgba(72, 58, 136, 0.45),
+    0 0 60px rgba(242, 202, 80, 0.12),
+    inset 0 0 40px rgba(255, 255, 255, 0.03);
+
+  overflow: hidden;
+}
+
+/* OVERLAY */
+.goddessImage::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(72, 58, 136, 0.18)
+  );
+
+  mix-blend-mode: screen;
+
+  pointer-events: none;
+}
+
+/* HOVER */
+.goddessImage:hover {
+  transform: scale(1.03) translateY(-4px);
+
+  filter: grayscale(20%) brightness(1) contrast(1.12);
+
+  box-shadow:
+    0 0 35px rgba(72, 58, 136, 0.75),
+    0 0 90px rgba(242, 202, 80, 0.22);
+}
+
+.goddessDescription {
+  color: v.$color-text;
+
+  font-size: 0.92rem;
+
+  line-height: 1.7;
+
+  max-width: 95%;
+
+  margin: 0 auto;
+
+  max-height: 180px;
+
+  overflow-y: auto;
+
+  padding-right: 0.5rem;
+}
+
+/* =========================
+   TAROT IMAGE
+========================= */
+
 .imageContainer {
   width: 100%;
 
@@ -99,6 +223,8 @@
   align-items: center;
 
   padding: 2rem 1.5rem 0;
+
+  margin-top: 1rem;
 }
 
 .image {
@@ -114,12 +240,16 @@
   filter: drop-shadow(0 0 20px rgba(242, 202, 80, 0.18));
 }
 
+/* =========================
+   CONTENT
+========================= */
+
 .content {
   padding: 2rem;
 
   border: 2px solid #483a88;
 
-  border-radius: 4px;
+  border-radius: 18px;
 
   margin: 1.5rem;
 
@@ -134,18 +264,23 @@
   color: #483a88;
 
   text-transform: uppercase;
+
   letter-spacing: 3px;
 
   font-size: 0.75rem;
 
   margin-bottom: 0.8rem;
+
+  text-align: center;
 }
 
 .title {
   color: #483a88;
 
   font-size: 2rem;
+
   font-family: v.$font-primary;
+
   font-weight: 600;
 
   margin-bottom: 1rem;
@@ -168,6 +303,7 @@
   line-height: 1.7;
 
   font-size: 1rem;
+
   font-family: v.$font-secondary;
 
   text-align: center;
@@ -266,6 +402,7 @@
 
   .subtitle {
     font-size: 0.65rem;
+
     letter-spacing: 2px;
   }
 
@@ -278,89 +415,65 @@
     height: 34px;
 
     font-size: 0.9rem;
+
+    top: 0.8rem;
+    right: 0.8rem;
+  }
+
+  .goddessImage {
+    width: 180px;
+    height: 250px;
   }
 }
-/* =========================
-   GODDESS SECTION
-========================= */
 
-.goddessSection {
-  padding: 2rem 1.5rem 1rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  text-align: center;
-
-  border-bottom: 1px solid rgba(242, 202, 80, 0.12);
-}
-
-.goddessImage {
-  width: 220px;
-  height: 310px;
-  object-fit: cover;
-
-  border: 2px solid #483a88;
-
-  margin-bottom: 1rem;
-  filter: grayscale(100%);
-  box-shadow:
-    0 0 20px v.$color-card-border,
-    0 0 30px rgba(242, 202, 80, 0.15);
-}
-
-.goddessContent {
-  width: 100%;
-}
-
-.goddessSubtitle {
-  color: rgba(242, 202, 80, 0.6);
-
-  text-transform: uppercase;
-
-  letter-spacing: 3px;
-
-  font-size: 0.7rem;
-
-  margin-bottom: 0.5rem;
-}
-
-.goddessName {
-  color: v.$color-accent;
-
-  font-family: v.$font-primary;
-
-  font-size: 1.8rem;
-
-  margin-bottom: 1rem;
-}
-
-.goddessDescription {
-  color: v.$color-text;
-
-  font-size: 0.92rem;
-
-  line-height: 1.7;
-
-  max-width: 95%;
-  margin: 0 auto;
-}
 /* =========================
    DESKTOP
 ========================= */
 
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
   .modal {
-    border-radius: 18px;
-    width: 100%;
+    max-width: 880px;
+  }
+
+  .goddessSection {
+    align-items: center;
+  }
+
+  .goddessImage {
+    width: 260px;
+    height: 360px;
+  }
+
+  .goddessDescription {
+    max-height: 300px;
+
+    overflow-y: auto;
+
+    padding-right: 0.5rem;
   }
 
   .image {
-    max-width: 270px;
+    max-width: 170px;
   }
 
   .description {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+  }
+  /* =========================
+   COPYRIGHT
+========================= */
+
+  .copyright {
+    margin-top: 1.5rem;
+
+    font-size: 0.75rem;
+
+    color: rgba(242, 202, 80, 0.55);
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    font-style: italic;
   }
 }
