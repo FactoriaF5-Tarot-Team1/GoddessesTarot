@@ -44,6 +44,37 @@ Clone the repository and navigate into the project folder:
 ```bash
 git clone https://github.com/FactoriaF5-Tarot-Team1/GoddessesTarot.git
 cd goddessestarot
+```
+Install dependencies:
+```bash
+npm install
+```
+
+Run the server and the local host:
+```bash
+npm run json
+npm run dev
+```
+
+## 🌳 Project Tree
+GODDESSESTAROT/
+├── public/                 # Static assets (favicons, public images, etc.)
+└── src/                    # Main application source code
+    ├── assets/             # Images, fonts, and data mock files (db.json)
+    ├── components/         # Reusable UI components
+    ├── config/             # Configuration files (API routes, constants)
+    ├── context/            # React Context providers for global state
+    ├── hooks/              # Custom React hooks
+    ├── pages/              # View components representing distinct routes
+    ├── services/           # Data fetching and API services (Axios instances)
+    ├── styles/             # Global styles and Sass stylesheets
+    ├── utils/              # Helper functions and utility logic
+    ├── App.jsx             # Main application component & router shell
+    └── main.jsx            # Application entry point
+├── index.html              # HTML template entry point
+├── package.json            # Project dependencies and scripts
+└── vite.config.js          # Vite configuration
+
 
 ## 👩‍💻 Authors
 Made with 💜 by:
