@@ -8,10 +8,8 @@ export function ReadingProvider({ children }) {
   const [readingData, setReadingData] = useState(null);
   const [history, setHistory] = useState([]);
 
-  // Estado del modal de confirmación
   const [confirmConfig, setConfirmConfig] = useState(null);
 
-  // Función para pedir confirmación con un modal estilizado
   function askConfirmation(message) {
     return new Promise((resolve) => {
       setConfirmConfig({
