@@ -116,7 +116,7 @@ Made with 💜 by:
 - [Aïda Garcia Musté](https://github.com/AidaG91) - Developer
 - [Elena Almansa Campos](https://github.com/elenaalmansacampos) - Scrum Master & Developer
 - [Rosa Naharro Vaillant](https://github.com/rosana50factoria) - Developer
-- [Chiara Di Maio](https://github.com/Kressala) - Developer
+- [Chiara Di Maio](https://github.com/chdimaio) - Developer
 
 ## 📄 License 
 This project was developed for educational purposes within the FemCoders Bootcamp 2026.
